@@ -27,12 +27,9 @@ Future<void> configureDependencies() async {
     ),
   );
 
-  _registerSplashDependencies();
   _registerHomeDependencies();
   _registerBookingsDependencies();
 }
-
-void _registerSplashDependencies() {}
 
 void _registerHomeDependencies() {}
 
