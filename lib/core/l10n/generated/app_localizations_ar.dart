@@ -38,4 +38,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get errorUnknown => 'حدث خطأ غير متوقع. حاول مرة أخرى.';
+
+  @override
+  String get emptyDefaultMessage => 'لا توجد بيانات لعرضها حاليًا.';
 }

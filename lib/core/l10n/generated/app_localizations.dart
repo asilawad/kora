@@ -151,6 +151,12 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'حدث خطأ غير متوقع. حاول مرة أخرى.'**
   String get errorUnknown;
+
+  /// No description provided for @emptyDefaultMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد بيانات لعرضها حاليًا.'**
+  String get emptyDefaultMessage;
 }
 
 class _AppLocalizationsDelegate
