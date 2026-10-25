@@ -1,0 +1,7 @@
+# Keep this background in sync with AppColors.surface.
+color: "#FFFFFF"
+image: assets/images/kora_logo_splash.png
+
+android_12:
+  color: "#FFFFFF"
+  image: assets/images/kora_logo_splash.png
