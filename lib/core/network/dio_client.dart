@@ -32,6 +32,7 @@ final class DioClient {
   DioClient({
     required String languageCode,
     required Iterable<Interceptor> interceptors,
+    HttpClientAdapter? httpClientAdapter,
   }) : _dio = Dio(
          BaseOptions(
            baseUrl: ApiConstants.baseUrl,
@@ -44,7 +45,12 @@ final class DioClient {
              ApiHeaders.acceptLanguage: languageCode,
            },
          ),
-       )..interceptors.addAll(interceptors);
+       ) {
+    _dio.interceptors.addAll(interceptors);
+    if (httpClientAdapter != null) {
+      _dio.httpClientAdapter = httpClientAdapter;
+    }
+  }
 
   final Dio _dio;
 
