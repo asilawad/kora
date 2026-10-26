@@ -41,4 +41,34 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get emptyDefaultMessage => 'لا توجد بيانات لعرضها حاليًا.';
+
+  @override
+  String get homeFeatured => 'المميزة';
+
+  @override
+  String get homePopular => 'الأكثر طلبًا';
+
+  @override
+  String get homeCourts => 'الملاعب';
+
+  @override
+  String get homeAll => 'الكل';
+
+  @override
+  String get homeSeeAll => 'عرض الكل';
+
+  @override
+  String get homeBookNow => 'احجز الآن';
+
+  @override
+  String get homeOpenNow => 'مفتوح الآن';
+
+  @override
+  String get homeClosed => 'مغلق';
+
+  @override
+  String get homeClosedNow => 'مغلق حاليًا';
+
+  @override
+  String get homeNoServices => 'لا توجد خدمات في هذا التصنيف.';
 }

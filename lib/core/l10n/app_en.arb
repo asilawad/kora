@@ -9,5 +9,15 @@
   "errorValidation": "Please check your information and try again.",
   "errorSlotUnavailable": "This time slot is no longer available. Choose another slot.",
   "errorUnknown": "An unexpected error occurred. Please try again.",
-  "emptyDefaultMessage": "There is nothing to show right now."
+  "emptyDefaultMessage": "There is nothing to show right now.",
+  "homeFeatured": "Featured",
+  "homePopular": "Most popular",
+  "homeCourts": "Courts",
+  "homeAll": "All",
+  "homeSeeAll": "See all",
+  "homeBookNow": "Book now",
+  "homeOpenNow": "Open now",
+  "homeClosed": "Closed",
+  "homeClosedNow": "Closed now",
+  "homeNoServices": "There are no services in this category."
 }

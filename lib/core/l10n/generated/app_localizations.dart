@@ -157,6 +157,66 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد بيانات لعرضها حاليًا.'**
   String get emptyDefaultMessage;
+
+  /// No description provided for @homeFeatured.
+  ///
+  /// In ar, this message translates to:
+  /// **'المميزة'**
+  String get homeFeatured;
+
+  /// No description provided for @homePopular.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأكثر طلبًا'**
+  String get homePopular;
+
+  /// No description provided for @homeCourts.
+  ///
+  /// In ar, this message translates to:
+  /// **'الملاعب'**
+  String get homeCourts;
+
+  /// No description provided for @homeAll.
+  ///
+  /// In ar, this message translates to:
+  /// **'الكل'**
+  String get homeAll;
+
+  /// No description provided for @homeSeeAll.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض الكل'**
+  String get homeSeeAll;
+
+  /// No description provided for @homeBookNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'احجز الآن'**
+  String get homeBookNow;
+
+  /// No description provided for @homeOpenNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'مفتوح الآن'**
+  String get homeOpenNow;
+
+  /// No description provided for @homeClosed.
+  ///
+  /// In ar, this message translates to:
+  /// **'مغلق'**
+  String get homeClosed;
+
+  /// No description provided for @homeClosedNow.
+  ///
+  /// In ar, this message translates to:
+  /// **'مغلق حاليًا'**
+  String get homeClosedNow;
+
+  /// No description provided for @homeNoServices.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد خدمات في هذا التصنيف.'**
+  String get homeNoServices;
 }
 
 class _AppLocalizationsDelegate

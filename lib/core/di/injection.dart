@@ -11,6 +11,7 @@ import '../../features/home/data/datasources/home_remote_data_source_impl.dart';
 import '../../features/home/data/repositories/home_repository_impl.dart';
 import '../../features/home/domain/repositories/home_repository.dart';
 import '../../features/home/domain/usecases/get_home_use_case.dart';
+import '../../features/home/presentation/cubit/home_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -46,6 +47,7 @@ void _registerHomeDependencies() {
   sl.registerLazySingleton<GetHomeUseCase>(
     () => GetHomeUseCase(sl<HomeRepository>()),
   );
+  sl.registerFactory<HomeCubit>(() => HomeCubit(sl<GetHomeUseCase>()));
 }
 
 void _registerBookingsDependencies() {}

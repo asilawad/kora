@@ -40,4 +40,34 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get emptyDefaultMessage => 'There is nothing to show right now.';
+
+  @override
+  String get homeFeatured => 'Featured';
+
+  @override
+  String get homePopular => 'Most popular';
+
+  @override
+  String get homeCourts => 'Courts';
+
+  @override
+  String get homeAll => 'All';
+
+  @override
+  String get homeSeeAll => 'See all';
+
+  @override
+  String get homeBookNow => 'Book now';
+
+  @override
+  String get homeOpenNow => 'Open now';
+
+  @override
+  String get homeClosed => 'Closed';
+
+  @override
+  String get homeClosedNow => 'Closed now';
+
+  @override
+  String get homeNoServices => 'There are no services in this category.';
 }

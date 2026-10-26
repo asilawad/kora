@@ -9,5 +9,15 @@
   "errorValidation": "يرجى التحقق من البيانات المدخلة والمحاولة مرة أخرى.",
   "errorSlotUnavailable": "هذا الموعد لم يعد متاحًا. اختر موعدًا آخر.",
   "errorUnknown": "حدث خطأ غير متوقع. حاول مرة أخرى.",
-  "emptyDefaultMessage": "لا توجد بيانات لعرضها حاليًا."
+  "emptyDefaultMessage": "لا توجد بيانات لعرضها حاليًا.",
+  "homeFeatured": "المميزة",
+  "homePopular": "الأكثر طلبًا",
+  "homeCourts": "الملاعب",
+  "homeAll": "الكل",
+  "homeSeeAll": "عرض الكل",
+  "homeBookNow": "احجز الآن",
+  "homeOpenNow": "مفتوح الآن",
+  "homeClosed": "مغلق",
+  "homeClosedNow": "مغلق حاليًا",
+  "homeNoServices": "لا توجد خدمات في هذا التصنيف."
 }
