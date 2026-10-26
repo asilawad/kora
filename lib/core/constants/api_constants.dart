@@ -28,7 +28,10 @@ abstract final class ApiConstants {
 
 /// Query parameter keys and fixed values.
 abstract final class ApiQuery {
+  static const String search = 'q';
   static const String categoryId = 'category_id';
+  static const String sort = 'sort';
+  static const String order = 'order';
   static const String staffId = 'staff_id';
   static const String serviceId = 'service_id';
   static const String page = 'page';
@@ -71,6 +74,10 @@ abstract final class ApiResponseKeys {
   static const String code = 'code';
   static const String details = 'details';
   static const String alternatives = 'alternatives';
+  static const String page = 'page';
+  static const String perPage = 'per_page';
+  static const String total = 'total';
+  static const String lastPage = 'last_page';
 }
 
 /// Known API error codes.

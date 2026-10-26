@@ -217,6 +217,90 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'لا توجد خدمات في هذا التصنيف.'**
   String get homeNoServices;
+
+  /// No description provided for @servicesTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخدمات'**
+  String get servicesTitle;
+
+  /// No description provided for @searchHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث عن خدمة'**
+  String get searchHint;
+
+  /// No description provided for @sortLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'ترتيب حسب'**
+  String get sortLabel;
+
+  /// No description provided for @sortPopular.
+  ///
+  /// In ar, this message translates to:
+  /// **'الأكثر شيوعًا'**
+  String get sortPopular;
+
+  /// No description provided for @sortPriceAsc.
+  ///
+  /// In ar, this message translates to:
+  /// **'السعر: من الأقل إلى الأعلى'**
+  String get sortPriceAsc;
+
+  /// No description provided for @sortPriceDesc.
+  ///
+  /// In ar, this message translates to:
+  /// **'السعر: من الأعلى إلى الأقل'**
+  String get sortPriceDesc;
+
+  /// No description provided for @sortDurationAsc.
+  ///
+  /// In ar, this message translates to:
+  /// **'المدة: الأقصر أولًا'**
+  String get sortDurationAsc;
+
+  /// No description provided for @sortName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم: أ إلى ي'**
+  String get sortName;
+
+  /// No description provided for @resultsCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'{count, plural, =0{لا توجد نتائج} one{نتيجة واحدة} two{نتيجتان} few{{count} نتائج} many{{count} نتيجة} other{{count} نتيجة}}'**
+  String resultsCount(num count);
+
+  /// No description provided for @noResults.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد خدمات متاحة حاليًا.'**
+  String get noResults;
+
+  /// No description provided for @noResultsForSearch.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم نعثر على خدمات تطابق بحثك.'**
+  String get noResultsForSearch;
+
+  /// No description provided for @loadMoreFailed.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر تحميل المزيد. حاول مرة أخرى.'**
+  String get loadMoreFailed;
+
+  /// No description provided for @homeCategories.
+  ///
+  /// In ar, this message translates to:
+  /// **'الفئات'**
+  String get homeCategories;
+
+  /// No description provided for @homeSearchHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'ابحث عن الملاعب والخدمات'**
+  String get homeSearchHint;
 }
 
 class _AppLocalizationsDelegate

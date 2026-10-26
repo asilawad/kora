@@ -70,4 +70,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeNoServices => 'There are no services in this category.';
+
+  @override
+  String get servicesTitle => 'Services';
+
+  @override
+  String get searchHint => 'Search services';
+
+  @override
+  String get sortLabel => 'Sort by';
+
+  @override
+  String get sortPopular => 'Most popular';
+
+  @override
+  String get sortPriceAsc => 'Price: low to high';
+
+  @override
+  String get sortPriceDesc => 'Price: high to low';
+
+  @override
+  String get sortDurationAsc => 'Duration: shortest first';
+
+  @override
+  String get sortName => 'Name: A to Z';
+
+  @override
+  String resultsCount(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count results',
+      one: '$count result',
+      zero: 'No results',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get noResults => 'No services are currently available.';
+
+  @override
+  String get noResultsForSearch => 'No services match your search.';
+
+  @override
+  String get loadMoreFailed => 'Couldn\'t load more. Try again.';
+
+  @override
+  String get homeCategories => 'Categories';
+
+  @override
+  String get homeSearchHint => 'Search courts and services';
 }

@@ -34,4 +34,9 @@ abstract final class HomeDimensions {
   static const double serviceBookButtonHorizontalPadding = 12;
   static const double serviceCardBorderWidth = 1;
   static const double transparentOpacity = 0;
+  static const double categoryCardWidth = 120;
+  static const double categoryCardHeight = 120;
+  static const double homeSearchHeight = 52;
+  static const double homeSearchRadius = 16;
+  static const double categoryFallbackIconSize = 32;
 }

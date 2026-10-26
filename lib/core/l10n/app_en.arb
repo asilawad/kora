@@ -19,5 +19,26 @@
   "homeOpenNow": "Open now",
   "homeClosed": "Closed",
   "homeClosedNow": "Closed now",
-  "homeNoServices": "There are no services in this category."
+  "homeNoServices": "There are no services in this category.",
+  "servicesTitle": "Services",
+  "searchHint": "Search services",
+  "sortLabel": "Sort by",
+  "sortPopular": "Most popular",
+  "sortPriceAsc": "Price: low to high",
+  "sortPriceDesc": "Price: high to low",
+  "sortDurationAsc": "Duration: shortest first",
+  "sortName": "Name: A to Z",
+  "resultsCount": "{count, plural, =0{No results} one{{count} result} other{{count} results}}",
+  "@resultsCount": {
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "noResults": "No services are currently available.",
+  "noResultsForSearch": "No services match your search.",
+  "loadMoreFailed": "Couldn't load more. Try again.",
+  "homeCategories": "Categories",
+  "homeSearchHint": "Search courts and services"
 }

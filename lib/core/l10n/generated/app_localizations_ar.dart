@@ -71,4 +71,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get homeNoServices => 'لا توجد خدمات في هذا التصنيف.';
+
+  @override
+  String get servicesTitle => 'الخدمات';
+
+  @override
+  String get searchHint => 'ابحث عن خدمة';
+
+  @override
+  String get sortLabel => 'ترتيب حسب';
+
+  @override
+  String get sortPopular => 'الأكثر شيوعًا';
+
+  @override
+  String get sortPriceAsc => 'السعر: من الأقل إلى الأعلى';
+
+  @override
+  String get sortPriceDesc => 'السعر: من الأعلى إلى الأقل';
+
+  @override
+  String get sortDurationAsc => 'المدة: الأقصر أولًا';
+
+  @override
+  String get sortName => 'الاسم: أ إلى ي';
+
+  @override
+  String resultsCount(num count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count نتيجة',
+      many: '$count نتيجة',
+      few: '$count نتائج',
+      two: 'نتيجتان',
+      one: 'نتيجة واحدة',
+      zero: 'لا توجد نتائج',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get noResults => 'لا توجد خدمات متاحة حاليًا.';
+
+  @override
+  String get noResultsForSearch => 'لم نعثر على خدمات تطابق بحثك.';
+
+  @override
+  String get loadMoreFailed => 'تعذّر تحميل المزيد. حاول مرة أخرى.';
+
+  @override
+  String get homeCategories => 'الفئات';
+
+  @override
+  String get homeSearchHint => 'ابحث عن الملاعب والخدمات';
 }

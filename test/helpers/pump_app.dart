@@ -7,6 +7,6 @@ Future<void> pumpApp(WidgetTester tester, Widget child) => tester.pumpWidget(
     locale: const Locale('ar'),
     supportedLocales: AppLocalizations.supportedLocales,
     localizationsDelegates: AppLocalizations.localizationsDelegates,
-    home: child,
+    home: Scaffold(body: child),
   ),
 );

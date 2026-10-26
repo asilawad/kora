@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../../core/router/app_routes.dart';
+import '../../../services/presentation/pages/services_page_arguments.dart';
 import '../../domain/entities/home_data_entity.dart';
 import '../../domain/entities/service_entity.dart';
 import '../cubit/home_state.dart';
@@ -8,6 +11,8 @@ import 'featured_list.dart';
 import 'home_dimensions.dart';
 import 'home_header.dart';
 import 'category_chips.dart';
+import 'categories_section.dart';
+import 'home_search_bar.dart';
 import 'place_cover_card.dart';
 import 'services_list.dart';
 
@@ -40,8 +45,20 @@ final class HomeLoadedView extends StatelessWidget {
           sliver: SliverList(
             delegate: SliverChildListDelegate([
               HomeHeader(place: data.place),
+              const SizedBox(height: HomeDimensions.itemSpacing),
+              HomeSearchBar(
+                categories: data.categories,
+                currencySymbol: data.place.currencySymbol,
+              ),
               const SizedBox(height: HomeDimensions.sectionSpacing),
               PlaceCoverCard(place: data.place),
+              if (data.categories.isNotEmpty) ...[
+                const SizedBox(height: HomeDimensions.sectionSpacing),
+                CategoriesSection(
+                  categories: data.categories,
+                  currencySymbol: data.place.currencySymbol,
+                ),
+              ],
               if (data.featured.isNotEmpty) ...[
                 const SizedBox(height: HomeDimensions.sectionSpacing),
                 FeaturedList(
@@ -61,6 +78,13 @@ final class HomeLoadedView extends StatelessWidget {
                 currencySymbol: data.place.currencySymbol,
                 onBook: onBook,
                 onTap: onServiceTap,
+                onSeeAll: () => context.pushNamed(
+                  AppRoutes.servicesName,
+                  extra: ServicesPageArguments(
+                    categories: data.categories,
+                    currencySymbol: data.place.currencySymbol,
+                  ),
+                ),
               ),
               if (data.staff.isNotEmpty) ...[
                 const SizedBox(height: HomeDimensions.sectionSpacing),

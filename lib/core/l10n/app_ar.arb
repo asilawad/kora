@@ -19,5 +19,26 @@
   "homeOpenNow": "مفتوح الآن",
   "homeClosed": "مغلق",
   "homeClosedNow": "مغلق حاليًا",
-  "homeNoServices": "لا توجد خدمات في هذا التصنيف."
+  "homeNoServices": "لا توجد خدمات في هذا التصنيف.",
+  "servicesTitle": "الخدمات",
+  "searchHint": "ابحث عن خدمة",
+  "sortLabel": "ترتيب حسب",
+  "sortPopular": "الأكثر شيوعًا",
+  "sortPriceAsc": "السعر: من الأقل إلى الأعلى",
+  "sortPriceDesc": "السعر: من الأعلى إلى الأقل",
+  "sortDurationAsc": "المدة: الأقصر أولًا",
+  "sortName": "الاسم: أ إلى ي",
+  "resultsCount": "{count, plural, =0{لا توجد نتائج} one{نتيجة واحدة} two{نتيجتان} few{{count} نتائج} many{{count} نتيجة} other{{count} نتيجة}}",
+  "@resultsCount": {
+    "placeholders": {
+      "count": {
+        "type": "num"
+      }
+    }
+  },
+  "noResults": "لا توجد خدمات متاحة حاليًا.",
+  "noResultsForSearch": "لم نعثر على خدمات تطابق بحثك.",
+  "loadMoreFailed": "تعذّر تحميل المزيد. حاول مرة أخرى.",
+  "homeCategories": "الفئات",
+  "homeSearchHint": "ابحث عن الملاعب والخدمات"
 }

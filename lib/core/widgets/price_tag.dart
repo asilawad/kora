@@ -17,15 +17,14 @@ final class PriceTag extends StatelessWidget {
   final String currencySymbol;
 
   @override
-  Widget build(BuildContext context) => Row(
-    mainAxisSize: MainAxisSize.min,
+  Widget build(BuildContext context) => Wrap(
+    spacing: WidgetDimensions.spacingSmall,
     children: [
       Text(
         '$currencySymbol ${formatPrice(salePrice ?? price)}',
         style: const TextStyle(color: AppColors.primary),
       ),
       if (salePrice != null) ...[
-        const SizedBox(width: WidgetDimensions.spacingSmall),
         Text(
           '$currencySymbol ${formatPrice(price)}',
           style: const TextStyle(

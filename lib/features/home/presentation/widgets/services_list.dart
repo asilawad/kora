@@ -13,6 +13,7 @@ final class ServicesList extends StatelessWidget {
     required this.currencySymbol,
     required this.onBook,
     required this.onTap,
+    required this.onSeeAll,
     super.key,
   });
 
@@ -20,12 +21,16 @@ final class ServicesList extends StatelessWidget {
   final String currencySymbol;
   final ValueChanged<ServiceEntity> onBook;
   final ValueChanged<ServiceEntity> onTap;
+  final VoidCallback onSeeAll;
 
   @override
   Widget build(BuildContext context) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
-      SectionHeader(title: AppLocalizations.of(context)!.homePopular),
+      SectionHeader(
+        title: AppLocalizations.of(context)!.homePopular,
+        onSeeAll: onSeeAll,
+      ),
       if (services.isEmpty)
         AppEmptyView(message: AppLocalizations.of(context)!.homeNoServices)
       else

@@ -9,6 +9,8 @@ final class AppNetworkImage extends StatelessWidget {
     this.fit = BoxFit.cover,
     this.borderRadius = BorderRadius.zero,
     this.aspectRatio,
+    this.placeholder,
+    this.errorPlaceholder,
     super.key,
   });
 
@@ -16,32 +18,52 @@ final class AppNetworkImage extends StatelessWidget {
   final BoxFit fit;
   final BorderRadiusGeometry borderRadius;
   final double? aspectRatio;
+  final Widget? placeholder;
+  final Widget? errorPlaceholder;
 
   @override
   Widget build(BuildContext context) => ClipRRect(
     borderRadius: borderRadius,
     child: aspectRatio == null
-        ? _CachedImage(url: url, fit: fit)
+        ? _CachedImage(
+            url: url,
+            fit: fit,
+            placeholder: placeholder,
+            errorPlaceholder: errorPlaceholder,
+          )
         : AspectRatio(
             aspectRatio: aspectRatio!,
-            child: _CachedImage(url: url, fit: fit),
+            child: _CachedImage(
+              url: url,
+              fit: fit,
+              placeholder: placeholder,
+              errorPlaceholder: errorPlaceholder,
+            ),
           ),
   );
 }
 
 final class _CachedImage extends StatelessWidget {
-  const _CachedImage({required this.url, required this.fit});
+  const _CachedImage({
+    required this.url,
+    required this.fit,
+    this.placeholder,
+    this.errorPlaceholder,
+  });
 
   final String url;
   final BoxFit fit;
+  final Widget? placeholder;
+  final Widget? errorPlaceholder;
 
   @override
   Widget build(BuildContext context) => CachedNetworkImage(
     imageUrl: url,
     fit: fit,
-    placeholder: (context, url) => const AppNetworkImagePlaceholder(),
+    placeholder: (context, url) =>
+        placeholder ?? const AppNetworkImagePlaceholder(),
     errorWidget: (context, url, error) =>
-        const AppNetworkImageErrorPlaceholder(),
+        errorPlaceholder ?? const AppNetworkImageErrorPlaceholder(),
   );
 }
 

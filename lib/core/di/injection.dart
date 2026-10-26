@@ -12,6 +12,12 @@ import '../../features/home/data/repositories/home_repository_impl.dart';
 import '../../features/home/domain/repositories/home_repository.dart';
 import '../../features/home/domain/usecases/get_home_use_case.dart';
 import '../../features/home/presentation/cubit/home_cubit.dart';
+import '../../features/services/data/datasources/services_remote_data_source.dart';
+import '../../features/services/data/datasources/services_remote_data_source_impl.dart';
+import '../../features/services/data/repositories/services_repository_impl.dart';
+import '../../features/services/domain/repositories/services_repository.dart';
+import '../../features/services/domain/usecases/get_services_use_case.dart';
+import '../../features/services/presentation/cubit/services_cubit.dart';
 
 final sl = GetIt.instance;
 
@@ -34,6 +40,7 @@ Future<void> configureDependencies() async {
   );
 
   _registerHomeDependencies();
+  _registerServicesDependencies();
   _registerBookingsDependencies();
 }
 
@@ -51,3 +58,18 @@ void _registerHomeDependencies() {
 }
 
 void _registerBookingsDependencies() {}
+
+void _registerServicesDependencies() {
+  sl.registerLazySingleton<ServicesRemoteDataSource>(
+    () => ServicesRemoteDataSourceImpl(sl<DioClient>()),
+  );
+  sl.registerLazySingleton<ServicesRepository>(
+    () => ServicesRepositoryImpl(sl<ServicesRemoteDataSource>()),
+  );
+  sl.registerLazySingleton<GetServicesUseCase>(
+    () => GetServicesUseCase(sl<ServicesRepository>()),
+  );
+  sl.registerFactory<ServicesCubit>(
+    () => ServicesCubit(sl<GetServicesUseCase>()),
+  );
+}
