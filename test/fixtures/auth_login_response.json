@@ -1,0 +1,21 @@
+{
+  "success": true,
+  "message": "تم تسجيل الدخول بنجاح",
+  "data": {
+    "token": "TEST_TOKEN",
+    "user": {
+      "id": 84,
+      "name": "طالب تجريبي",
+      "email": "student.test@example.com",
+      "phone": "0599000111",
+      "role": "customer",
+      "role_label": "عميل",
+      "avatar": null,
+      "initials": "طت",
+      "cohort": null,
+      "is_active": true,
+      "last_login_at": "2026-10-29T08:49:45+00:00",
+      "created_at": "2026-10-20T16:24:14+00:00"
+    }
+  }
+}

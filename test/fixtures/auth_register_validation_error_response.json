@@ -1,0 +1,9 @@
+{
+    "success": false,
+    "message": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+    "status": 422,
+    "error": {
+        "code": "INVALID_CREDENTIALS",
+        "details": {}
+    }
+}

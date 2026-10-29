@@ -7,6 +7,8 @@ extension FailureMessage on Failure {
     TimeoutFailure() => l10n.errorTimeout,
     ServerFailure(:final message) => message ?? l10n.errorServer,
     UnauthorizedFailure() => l10n.errorUnauthorized,
+    InvalidCredentialsFailure(:final message) =>
+      message ?? l10n.authInvalidCredentials,
     ValidationFailure(:final message) => message ?? l10n.errorValidation,
     SlotUnavailableFailure() => l10n.errorSlotUnavailable,
     UnknownFailure() => l10n.errorUnknown,

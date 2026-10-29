@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "message": "تم بنجاح",
+  "data": {
+    "id": 84,
+    "name": "طالب تجريبي",
+    "email": "student.test@example.com",
+    "phone": "0599000111",
+    "role": "customer",
+    "role_label": "عميل",
+    "avatar": null,
+    "initials": "طت",
+    "cohort": null,
+    "is_active": true,
+    "last_login_at": "2026-10-29T08:49:45+00:00",
+    "created_at": "2026-10-20T16:24:14+00:00",
+    "reliability": {
+      "score": 100,
+      "level": "new",
+      "label": "عميل جديد",
+      "completed": 0,
+      "no_shows": 0,
+      "late_cancellations": 0,
+      "total": 0
+    }
+  }
+}

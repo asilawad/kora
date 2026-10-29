@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:convert';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -90,6 +91,36 @@ void main() {
     );
 
     expect(failure, isA<ValidationFailure>());
+  });
+
+  test('maps INVALID_CREDENTIALS 422 separately from field validation', () async {
+    final failure = await mapException(
+      _badResponse(
+        HttpStatus.unprocessableEntity,
+        <String, Object?>{
+          'message': 'Invalid credentials',
+          'error': <String, Object?>{
+            'code': ApiErrorCodes.invalidCredentials,
+            'details': <String, Object?>{},
+          },
+        },
+      ),
+    );
+
+    expect(failure, isA<InvalidCredentialsFailure>());
+    expect(failure.message, 'Invalid credentials');
+  });
+
+  test('maps the real auth validation fixture to invalid credentials', () async {
+    final fixture = jsonDecode(
+      File('test/fixtures/auth_validation_error_response.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
+    final failure = await mapException(
+      _badResponse(HttpStatus.unprocessableEntity, fixture),
+    );
+
+    expect(failure, isA<InvalidCredentialsFailure>());
+    expect(failure.message, fixture['message']);
   });
 
   test('maps other bad responses to ServerFailure', () async {

@@ -40,5 +40,22 @@
   "noResultsForSearch": "لم نعثر على خدمات تطابق بحثك.",
   "loadMoreFailed": "تعذّر تحميل المزيد. حاول مرة أخرى.",
   "homeCategories": "الفئات",
-  "homeSearchHint": "ابحث عن الملاعب والخدمات"
+  "homeSearchHint": "ابحث عن الملاعب والخدمات",
+  "authLogin": "تسجيل الدخول",
+  "authRegister": "إنشاء حساب",
+  "authName": "الاسم الكامل",
+  "authEmail": "البريد الإلكتروني",
+  "authPhone": "رقم الهاتف",
+  "authPassword": "كلمة المرور",
+  "authConfirmPassword": "تأكيد كلمة المرور",
+  "authDeviceName": "تطبيق كورة",
+  "authRequired": "هذا الحقل مطلوب.",
+  "authPhoneRequired": "أدخل رقم الهاتف.",
+  "authInvalidEmail": "أدخل بريدًا إلكترونيًا صحيحًا.",
+  "authPasswordMinLength": "يجب ألا تقل كلمة المرور عن 6 أحرف.",
+  "authPasswordMismatch": "كلمتا المرور غير متطابقتين.",
+  "authInvalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+  "authSheetTitle": "حسابك في كورة",
+  "authPasswordVisibility": "إظهار كلمة المرور",
+  "authPasswordVisibilityHidden": "إخفاء كلمة المرور"
 }

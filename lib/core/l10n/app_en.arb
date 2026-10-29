@@ -40,5 +40,22 @@
   "noResultsForSearch": "No services match your search.",
   "loadMoreFailed": "Couldn't load more. Try again.",
   "homeCategories": "Categories",
-  "homeSearchHint": "Search courts and services"
+  "homeSearchHint": "Search courts and services",
+  "authLogin": "Log in",
+  "authRegister": "Create account",
+  "authName": "Full name",
+  "authEmail": "Email",
+  "authPhone": "Phone number",
+  "authPassword": "Password",
+  "authConfirmPassword": "Confirm password",
+  "authDeviceName": "Kora app",
+  "authRequired": "This field is required.",
+  "authPhoneRequired": "Enter a phone number.",
+  "authInvalidEmail": "Enter a valid email address.",
+  "authPasswordMinLength": "Password must be at least 6 characters.",
+  "authPasswordMismatch": "Passwords do not match.",
+  "authInvalidCredentials": "The email or password is incorrect.",
+  "authSheetTitle": "Your Kora account",
+  "authPasswordVisibility": "Show password",
+  "authPasswordVisibilityHidden": "Hide password"
 }

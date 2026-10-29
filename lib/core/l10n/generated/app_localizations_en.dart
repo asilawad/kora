@@ -121,4 +121,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get homeSearchHint => 'Search courts and services';
+
+  @override
+  String get authLogin => 'Log in';
+
+  @override
+  String get authRegister => 'Create account';
+
+  @override
+  String get authName => 'Full name';
+
+  @override
+  String get authEmail => 'Email';
+
+  @override
+  String get authPhone => 'Phone number';
+
+  @override
+  String get authPassword => 'Password';
+
+  @override
+  String get authConfirmPassword => 'Confirm password';
+
+  @override
+  String get authDeviceName => 'Kora app';
+
+  @override
+  String get authRequired => 'This field is required.';
+
+  @override
+  String get authPhoneRequired => 'Enter a phone number.';
+
+  @override
+  String get authInvalidEmail => 'Enter a valid email address.';
+
+  @override
+  String get authPasswordMinLength => 'Password must be at least 6 characters.';
+
+  @override
+  String get authPasswordMismatch => 'Passwords do not match.';
+
+  @override
+  String get authInvalidCredentials => 'The email or password is incorrect.';
+
+  @override
+  String get authSheetTitle => 'Your Kora account';
+
+  @override
+  String get authPasswordVisibility => 'Show password';
+
+  @override
+  String get authPasswordVisibilityHidden => 'Hide password';
 }

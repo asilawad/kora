@@ -83,4 +83,5 @@ abstract final class ApiResponseKeys {
 /// Known API error codes.
 abstract final class ApiErrorCodes {
   static const String slotUnavailable = 'SLOT_UNAVAILABLE';
+  static const String invalidCredentials = 'INVALID_CREDENTIALS';
 }

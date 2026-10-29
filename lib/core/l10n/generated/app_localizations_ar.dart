@@ -125,4 +125,56 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get homeSearchHint => 'ابحث عن الملاعب والخدمات';
+
+  @override
+  String get authLogin => 'تسجيل الدخول';
+
+  @override
+  String get authRegister => 'إنشاء حساب';
+
+  @override
+  String get authName => 'الاسم الكامل';
+
+  @override
+  String get authEmail => 'البريد الإلكتروني';
+
+  @override
+  String get authPhone => 'رقم الهاتف';
+
+  @override
+  String get authPassword => 'كلمة المرور';
+
+  @override
+  String get authConfirmPassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get authDeviceName => 'تطبيق كورة';
+
+  @override
+  String get authRequired => 'هذا الحقل مطلوب.';
+
+  @override
+  String get authPhoneRequired => 'أدخل رقم الهاتف.';
+
+  @override
+  String get authInvalidEmail => 'أدخل بريدًا إلكترونيًا صحيحًا.';
+
+  @override
+  String get authPasswordMinLength => 'يجب ألا تقل كلمة المرور عن 6 أحرف.';
+
+  @override
+  String get authPasswordMismatch => 'كلمتا المرور غير متطابقتين.';
+
+  @override
+  String get authInvalidCredentials =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة.';
+
+  @override
+  String get authSheetTitle => 'حسابك في كورة';
+
+  @override
+  String get authPasswordVisibility => 'إظهار كلمة المرور';
+
+  @override
+  String get authPasswordVisibilityHidden => 'إخفاء كلمة المرور';
 }

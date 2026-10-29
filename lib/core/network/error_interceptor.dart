@@ -51,6 +51,10 @@ final class ErrorInterceptor extends Interceptor {
         alternatives: _alternatives(details),
       );
     }
+    if (status == HttpStatus.unprocessableEntity &&
+        code == ApiErrorCodes.invalidCredentials) {
+      return InvalidCredentialsFailure(message: message, code: code);
+    }
 
     return switch (status) {
       HttpStatus.unauthorized => UnauthorizedFailure(
@@ -60,13 +64,21 @@ final class ErrorInterceptor extends Interceptor {
       HttpStatus.unprocessableEntity => ValidationFailure(
         message: message,
         code: code,
-        details: details,
+        details: _fieldDetails(details),
       ),
       _ => ServerFailure(message: message, code: code, statusCode: status),
     };
   }
 
   String? _asString(Object? value) => value is String ? value : null;
+
+  Map<String, Object?> _fieldDetails(Object? details) {
+    if (details is! Map) return const {};
+    return {
+      for (final entry in details.entries)
+        if (entry.key is String) entry.key as String: entry.value,
+    };
+  }
 
   /// `error.details.alternatives` (item shape not yet confirmed -> raw).
   List<Object?> _alternatives(Object? details) {

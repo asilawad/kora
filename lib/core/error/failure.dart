@@ -41,6 +41,11 @@ final class UnauthorizedFailure extends Failure {
   const UnauthorizedFailure({super.message, super.code});
 }
 
+/// Invalid email or password returned by the authentication endpoints.
+final class InvalidCredentialsFailure extends Failure {
+  const InvalidCredentialsFailure({super.message, super.code});
+}
+
 /// Request rejected by validation (field errors kept raw in [details]).
 final class ValidationFailure extends Failure {
   const ValidationFailure({super.message, super.code, this.details});

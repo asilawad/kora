@@ -12,6 +12,7 @@ final class AuthInterceptor extends Interceptor {
   AuthInterceptor(this._tokenStorage);
 
   final TokenStorage _tokenStorage;
+  void Function()? onUnauthorized;
 
   @override
   Future<void> onRequest(
@@ -33,6 +34,7 @@ final class AuthInterceptor extends Interceptor {
   ) async {
     if (err.response?.statusCode == HttpStatus.unauthorized) {
       await _tokenStorage.clear();
+      onUnauthorized?.call();
     }
     handler.next(err);
   }

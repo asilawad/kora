@@ -1,0 +1,8 @@
+{
+  "name": "طالب تجريبي",
+  "email": "student.test@example.com",
+  "phone": "0599000111",
+  "password": "Secret123",
+  "password_confirmation": "Secret123",
+  "device_name": "Postman"
+}

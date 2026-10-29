@@ -301,6 +301,108 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'ابحث عن الملاعب والخدمات'**
   String get homeSearchHint;
+
+  /// No description provided for @authLogin.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الدخول'**
+  String get authLogin;
+
+  /// No description provided for @authRegister.
+  ///
+  /// In ar, this message translates to:
+  /// **'إنشاء حساب'**
+  String get authRegister;
+
+  /// No description provided for @authName.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاسم الكامل'**
+  String get authName;
+
+  /// No description provided for @authEmail.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الإلكتروني'**
+  String get authEmail;
+
+  /// No description provided for @authPhone.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الهاتف'**
+  String get authPhone;
+
+  /// No description provided for @authPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمة المرور'**
+  String get authPassword;
+
+  /// No description provided for @authConfirmPassword.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد كلمة المرور'**
+  String get authConfirmPassword;
+
+  /// No description provided for @authDeviceName.
+  ///
+  /// In ar, this message translates to:
+  /// **'تطبيق كورة'**
+  String get authDeviceName;
+
+  /// No description provided for @authRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'هذا الحقل مطلوب.'**
+  String get authRequired;
+
+  /// No description provided for @authPhoneRequired.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل رقم الهاتف.'**
+  String get authPhoneRequired;
+
+  /// No description provided for @authInvalidEmail.
+  ///
+  /// In ar, this message translates to:
+  /// **'أدخل بريدًا إلكترونيًا صحيحًا.'**
+  String get authInvalidEmail;
+
+  /// No description provided for @authPasswordMinLength.
+  ///
+  /// In ar, this message translates to:
+  /// **'يجب ألا تقل كلمة المرور عن 6 أحرف.'**
+  String get authPasswordMinLength;
+
+  /// No description provided for @authPasswordMismatch.
+  ///
+  /// In ar, this message translates to:
+  /// **'كلمتا المرور غير متطابقتين.'**
+  String get authPasswordMismatch;
+
+  /// No description provided for @authInvalidCredentials.
+  ///
+  /// In ar, this message translates to:
+  /// **'البريد الإلكتروني أو كلمة المرور غير صحيحة.'**
+  String get authInvalidCredentials;
+
+  /// No description provided for @authSheetTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسابك في كورة'**
+  String get authSheetTitle;
+
+  /// No description provided for @authPasswordVisibility.
+  ///
+  /// In ar, this message translates to:
+  /// **'إظهار كلمة المرور'**
+  String get authPasswordVisibility;
+
+  /// No description provided for @authPasswordVisibilityHidden.
+  ///
+  /// In ar, this message translates to:
+  /// **'إخفاء كلمة المرور'**
+  String get authPasswordVisibilityHidden;
 }
 
 class _AppLocalizationsDelegate
