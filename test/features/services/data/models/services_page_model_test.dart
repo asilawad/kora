@@ -1,5 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:kora/features/services/data/models/services_page_model.dart';
 
 import '../../helpers/load_services_page.dart';
 

@@ -23,6 +23,7 @@ final class HomeLoadedView extends StatelessWidget {
     required this.onCategorySelected,
     required this.onBook,
     required this.onServiceTap,
+    this.scrollController,
     super.key,
   });
 
@@ -31,6 +32,7 @@ final class HomeLoadedView extends StatelessWidget {
   final ValueChanged<int?> onCategorySelected;
   final ValueChanged<ServiceEntity> onBook;
   final ValueChanged<ServiceEntity> onServiceTap;
+  final ScrollController? scrollController;
 
   HomeDataEntity get data => state.data;
 
@@ -38,6 +40,7 @@ final class HomeLoadedView extends StatelessWidget {
   Widget build(BuildContext context) => RefreshIndicator(
     onRefresh: onRefresh,
     child: CustomScrollView(
+      controller: scrollController,
       physics: const AlwaysScrollableScrollPhysics(),
       slivers: [
         SliverPadding(

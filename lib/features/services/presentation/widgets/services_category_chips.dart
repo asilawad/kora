@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../home/domain/entities/category_entity.dart';
-import '../../domain/entities/services_query.dart';
 import 'services_category_chip.dart';
 import 'services_dimensions.dart';
 

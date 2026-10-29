@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../home/domain/entities/intake_field_entity.dart';
 import '../booking_dimensions.dart';
 

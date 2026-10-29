@@ -10,7 +10,6 @@ import 'package:kora/features/my_bookings/data/datasources/my_bookings_remote_da
 import 'package:kora/features/my_bookings/data/models/bookings_page_model.dart';
 import 'package:kora/features/my_bookings/data/repositories/my_bookings_repository_impl.dart';
 import 'package:kora/features/my_bookings/domain/entities/booking_scope.dart';
-import 'package:kora/features/my_bookings/domain/repositories/my_bookings_repository.dart';
 import 'package:kora/features/my_bookings/domain/usecases/cancel_booking_use_case.dart';
 import 'package:kora/features/my_bookings/domain/usecases/get_bookings_use_case.dart';
 import 'package:mocktail/mocktail.dart';

@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 abstract final class ServiceDetailsDimensions {
   static const double pagePadding = 20;
   static const double sectionSpacing = 24;

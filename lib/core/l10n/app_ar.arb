@@ -1,4 +1,6 @@
 {
+  "navigationHome": "الرئيسية",
+  "navigationBookings": "حجوزاتي",
   "@@locale": "ar",
   "appName": "كورة",
   "retry": "إعادة المحاولة",

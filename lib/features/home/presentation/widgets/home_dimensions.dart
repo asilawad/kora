@@ -6,7 +6,7 @@ abstract final class HomeDimensions {
   static const double logoSize = 52;
   static const double coverAspectRatio = 1.8;
   static const double featuredCardWidth = 168;
-  static const double featuredCardInfoHeight = 96;
+  static const double featuredCardInfoHeight = 100;
   static const double featuredCardMargin = 4;
   static const double featuredListHeight =
       featuredImageHeight +
@@ -39,4 +39,5 @@ abstract final class HomeDimensions {
   static const double homeSearchHeight = 52;
   static const double homeSearchRadius = 16;
   static const double categoryFallbackIconSize = 32;
+  static const Duration scrollToTopDuration = Duration(milliseconds: 250);
 }

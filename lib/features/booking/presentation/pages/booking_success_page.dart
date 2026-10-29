@@ -6,6 +6,7 @@ import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/utils/price_formatter.dart';
 import '../../../../core/widgets/primary_button.dart';
+import '../../../app_shell/presentation/app_shell_navigation.dart';
 import '../../domain/entities/booking_entity.dart';
 import '../booking_dimensions.dart';
 
@@ -37,8 +38,11 @@ final class BookingSuccessPage extends StatelessWidget {
                 const SizedBox(height: BookingDimensions.sectionSpacing),
                 PrimaryButton(
                   label: l10n.bookingViewBookings,
-                  onPressed: () =>
-                      context.goNamed(AppRoutes.myBookingsName),
+                  onPressed: () {
+                    if (!AppShellNavigation.goToBookings()) {
+                      context.goNamed(AppRoutes.myBookingsName);
+                    }
+                  },
                 ),
                 const SizedBox(height: BookingDimensions.itemSpacing),
                 OutlinedButton(

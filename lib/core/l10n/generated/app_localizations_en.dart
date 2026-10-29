@@ -9,6 +9,12 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String get navigationHome => 'Home';
+
+  @override
+  String get navigationBookings => 'My Bookings';
+
+  @override
   String get appName => 'Kora';
 
   @override

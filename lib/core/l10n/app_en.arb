@@ -1,4 +1,6 @@
 {
+  "navigationHome": "Home",
+  "navigationBookings": "My Bookings",
   "@@locale": "en",
   "appName": "Kora",
   "retry": "Retry",

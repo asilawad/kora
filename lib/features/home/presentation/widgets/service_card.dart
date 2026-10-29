@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_theme_tokens.dart';
 import '../../../../core/widgets/app_network_image.dart';
 import '../../../../core/widgets/price_tag.dart';
 import '../../domain/entities/service_entity.dart';
@@ -25,7 +26,7 @@ final class ServiceCard extends StatelessWidget {
   Widget build(BuildContext context) => Card(
     clipBehavior: Clip.antiAlias,
     color: AppColors.surface,
-    elevation: 0,
+    elevation: AppThemeTokens.zeroElevation,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(HomeDimensions.serviceCardRadius),
       side: const BorderSide(

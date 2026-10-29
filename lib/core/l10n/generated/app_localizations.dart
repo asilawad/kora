@@ -98,6 +98,18 @@ abstract class AppLocalizations {
     Locale('en'),
   ];
 
+  /// No description provided for @navigationHome.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرئيسية'**
+  String get navigationHome;
+
+  /// No description provided for @navigationBookings.
+  ///
+  /// In ar, this message translates to:
+  /// **'حجوزاتي'**
+  String get navigationBookings;
+
   /// No description provided for @appName.
   ///
   /// In ar, this message translates to:

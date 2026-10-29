@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../home/domain/entities/category_entity.dart';
-import '../../../home/presentation/widgets/home_dimensions.dart';
-import '../../domain/entities/service_sort.dart';
 import '../cubit/services_cubit.dart';
 import '../cubit/services_state.dart';
 import '../widgets/services_category_chips.dart';

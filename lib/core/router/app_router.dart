@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/app_shell/presentation/app_shell.dart';
 import '../../features/home/presentation/pages/home_page.dart';
 import '../../features/services/presentation/pages/services_page.dart';
 import '../../features/services/presentation/pages/services_page_arguments.dart';
@@ -11,17 +13,41 @@ import '../../features/home/domain/entities/service_entity.dart';
 import 'app_routes.dart';
 
 abstract final class AppRouter {
+  static final GlobalKey<NavigatorState> rootNavigatorKey =
+      GlobalKey<NavigatorState>();
+
   static final GoRouter router = GoRouter(
+    navigatorKey: rootNavigatorKey,
     initialLocation: AppRoutes.homePath,
     routes: [
-      GoRoute(
-        path: AppRoutes.homePath,
-        name: AppRoutes.homeName,
-        builder: (context, state) => const HomePage(),
+      StatefulShellRoute.indexedStack(
+        builder: (context, state, navigationShell) =>
+            AppShell(navigationShell: navigationShell),
+        branches: [
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.homePath,
+                name: AppRoutes.homeName,
+                builder: (context, state) => const HomePage(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.myBookingsPath,
+                name: AppRoutes.myBookingsName,
+                builder: (context, state) => const MyBookingsPage(),
+              ),
+            ],
+          ),
+        ],
       ),
       GoRoute(
         path: AppRoutes.servicesPath,
         name: AppRoutes.servicesName,
+        parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) {
           final extra = state.extra;
           final arguments = extra is ServicesPageArguments
@@ -38,6 +64,7 @@ abstract final class AppRouter {
       GoRoute(
         path: AppRoutes.serviceDetailsPath,
         name: AppRoutes.serviceDetailsName,
+        parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) {
           final extra = state.extra;
           return ServiceDetailsPage(
@@ -51,14 +78,10 @@ abstract final class AppRouter {
       GoRoute(
         path: AppRoutes.bookingSuccessPath,
         name: AppRoutes.bookingSuccessName,
+        parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => BookingSuccessPage(
           booking: state.extra! as BookingEntity,
         ),
-      ),
-      GoRoute(
-        path: AppRoutes.myBookingsPath,
-        name: AppRoutes.myBookingsName,
-        builder: (context, state) => const MyBookingsPage(),
       ),
     ],
   );

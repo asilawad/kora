@@ -16,6 +16,7 @@ final class HomeStateView extends StatelessWidget {
     required this.onCategorySelected,
     required this.onBook,
     required this.onServiceTap,
+    this.scrollController,
     super.key,
   });
 
@@ -25,6 +26,7 @@ final class HomeStateView extends StatelessWidget {
   final ValueChanged<int?> onCategorySelected;
   final ValueChanged<ServiceEntity> onBook;
   final ValueChanged<ServiceEntity> onServiceTap;
+  final ScrollController? scrollController;
 
   @override
   Widget build(BuildContext context) => switch (state) {
@@ -39,6 +41,7 @@ final class HomeStateView extends StatelessWidget {
       onCategorySelected: onCategorySelected,
       onBook: onBook,
       onServiceTap: onServiceTap,
+      scrollController: scrollController,
     ),
   };
 }

@@ -1,0 +1,52 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:kora/app.dart';
+import 'package:kora/core/constants/api_constants.dart';
+import 'package:kora/core/error/failure.dart';
+import 'package:kora/core/error/result.dart';
+import 'package:kora/core/l10n/generated/app_localizations.dart';
+import 'package:kora/features/auth/presentation/auth_bottom_sheet.dart';
+import 'package:kora/features/booking/presentation/booking_confirm_sheet.dart';
+import 'package:kora/features/service_details/presentation/widgets/sticky_book_bar.dart';
+
+import 'app_flow_harness.dart';
+import 'app_flow_test_helpers.dart';
+
+void main() {
+  testWidgets('keeps the confirmation sheet open with the server overlap message', (
+    tester,
+  ) async {
+    await tester.binding.setSurfaceSize(const Size(800, 1200));
+    final harness = await AppFlowHarness.create();
+    await harness.register();
+    harness.bookingRepository.current = const Failed(
+      ValidationFailure(
+        message: 'لديك حجز آخر في نفس الوقت',
+        code: ApiErrorCodes.customerOverlap,
+      ),
+    );
+    await tester.pumpWidget(const KoraApp());
+    await pumpFrames(tester);
+
+    await chooseServiceCourtDayAndSlot(tester, harness);
+    final l10n = AppLocalizations.of(tester.element(find.byType(StickyBookBar)))!;
+    await tester.tap(find.text(l10n.serviceBookAt(harness.slots.first.time)));
+    await pumpFrames(tester);
+    expect(find.byType(AuthBottomSheet), findsOneWidget);
+    await authenticateInSheet(tester);
+    await pumpFrames(tester);
+    expect(find.byType(BookingConfirmSheet), findsOneWidget);
+
+    final confirm = AppLocalizations.of(
+      tester.element(find.byType(BookingConfirmSheet)),
+    )!.bookingConfirm;
+    await tester.ensureVisible(find.text(confirm).last);
+    await tester.tap(find.text(confirm).last);
+    await pumpFrames(tester);
+
+    expect(find.byType(BookingConfirmSheet), findsOneWidget);
+    expect(find.text('لديك حجز آخر في نفس الوقت'), findsOneWidget);
+    await tester.pumpWidget(const SizedBox.shrink());
+    await tester.binding.setSurfaceSize(null);
+  });
+}

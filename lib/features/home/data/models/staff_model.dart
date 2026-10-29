@@ -1,5 +1,4 @@
 import '../../domain/entities/opening_day_entity.dart';
-import '../../domain/entities/rating_entity.dart';
 import '../../domain/entities/staff_entity.dart';
 import 'home_json_keys.dart';
 import 'opening_day_model.dart';

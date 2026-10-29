@@ -1,5 +1,4 @@
 import '../../domain/entities/booking_rules_entity.dart';
-import '../../domain/entities/intake_field_entity.dart';
 import 'home_json_keys.dart';
 import 'intake_field_model.dart';
 
