@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "message": "لا يمكن إلغاء هذا الحجز الآن",
+  "status": 422,
+  "error": { "code": "BOOKING_NOT_CANCELLABLE", "details": {} }
+}

@@ -1,11 +1,8 @@
 {
-    "starts_at":  "2026-10-30T08:30:00+02:00",
-    "payment_method":  "cash",
-    "service_id":  74,
-    "staff_id":  55,
-    "answers":  {
-                    "players_count":  10,
-                    "team_name":  "Test Team"
-                },
-    "notes":  "test booking"
+  "service_id": 74,
+  "staff_id": 55,
+  "starts_at": "2026-10-31T10:00:00+02:00",
+  "notes": "t",
+  "answers": { "team_name": "T", "players_count": 10 },
+  "payment_method": "cash"
 }

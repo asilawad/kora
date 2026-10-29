@@ -1,1 +1,82 @@
-{"success":true,"message":"تم تأكيد حجزك 🎉","data":{"id":2791,"number":"DR-1001","code":"C47BJY","qr":"DORI:kora:C47BJY","status":"confirmed","status_label":"مؤكد","source":"app","source_label":"التطبيق","starts_at":"2026-10-30T08:30:00+02:00","ends_at":"2026-10-30T09:30:00+02:00","date":"2026-10-30","day_label":"الجمعة","time":"08:30","end_time":"09:30","duration_minutes":60,"minutes_until":1283,"service_id":74,"service_name":"حجز ملعب خماسي - ساعة","service":{"id":74,"name":"حجز ملعب خماسي - ساعة","image":"https://dori.toldpath.com/uploads/services/29/c4de4090-f9cd-40e5-a2a8-55ed0ac93ef0_thumb.webp","capacity":1},"staff_id":55,"staff_name":"ملعب الزيتون","staff":{"id":55,"name":"ملعب الزيتون","title":"كرة قدم خماسي - عشب صناعي","avatar":"https://dori.toldpath.com/uploads/staff/29/1256e804-43be-434e-b3c7-00f585c734e5.webp","initials":"ما","color":"#0EA5A4"},"price":120.0,"discount":0.0,"total":120.0,"currency":"ILS","currency_symbol":"₪","coupon_code":null,"payment_method":"cash","payment_method_label":"الدفع في المنشأة","customer_name":"طالب تجريبي","phone":"0599000111","notes":"test booking","answers":{"team_name":"Test Team","players_count":10},"answers_display":[{"key":"team_name","label":"اسم الفريق","type":"text","value":"Test Team","display":"Test Team","unit":null},{"key":"players_count","label":"عدد اللاعبين","type":"number","value":10,"display":"10 لاعب","unit":"لاعب"}],"cancel_reason":null,"cancelled_late":null,"reschedule_count":null,"can_cancel":true,"can_reschedule":true,"cancel_is_late":false,"can_review":false,"review":null,"timeline":[{"status":"confirmed","label":"مؤكد","done":true,"at":"2026-10-29T09:06:15+00:00","note":null},{"status":"arrived","label":"وصل","done":false,"at":null,"note":null},{"status":"in_progress","label":"جارٍ الآن","done":false,"at":null,"note":null},{"status":"completed","label":"مكتمل","done":false,"at":null,"note":null}],"place":{"id":29,"name":"Kora","slug":"kora","logo":"https://dori.toldpath.com/uploads/places/29/7d10d204-9856-40e3-89d8-ea6afa55b371.webp","address":"Gaza, Al -Nasser","phone":"0592139424"},"arrived_at":null,"completed_at":null,"cancelled_at":null,"created_at":"2026-10-29T09:06:15+00:00"}}
+{
+  "success": true,
+  "message": "تم تأكيد حجزك 🎉",
+  "data": {
+    "id": 2793,
+    "number": "DR-1003",
+    "code": "6G3ETC",
+    "qr": "DORI:kora:6G3ETC",
+    "status": "confirmed",
+    "status_label": "مؤكد",
+    "source": "app",
+    "source_label": "التطبيق",
+    "starts_at": "2026-10-31T10:00:00+02:00",
+    "ends_at": "2026-10-31T11:00:00+02:00",
+    "date": "2026-10-31",
+    "day_label": "السبت",
+    "time": "10:00",
+    "end_time": "11:00",
+    "duration_minutes": 60,
+    "minutes_until": 2807,
+    "service_id": 74,
+    "service_name": "حجز ملعب خماسي - ساعة",
+    "service": {
+      "id": 74,
+      "name": "حجز ملعب خماسي - ساعة",
+      "image": "https://dori.toldpath.com/uploads/services/29/c4de4090-f9cd-40e5-a2a8-55ed0ac93ef0_thumb.webp",
+      "capacity": 1
+    },
+    "staff_id": 55,
+    "staff_name": "ملعب الزيتون",
+    "staff": {
+      "id": 55,
+      "name": "ملعب الزيتون",
+      "title": "كرة قدم خماسي - عشب صناعي",
+      "avatar": "https://dori.toldpath.com/uploads/staff/29/1256e804-43be-434e-b3c7-00f585c734e5.webp",
+      "initials": "ما",
+      "color": "#0EA5A4"
+    },
+    "price": 120,
+    "discount": 0,
+    "total": 120,
+    "currency": "ILS",
+    "currency_symbol": "₪",
+    "coupon_code": null,
+    "payment_method": "cash",
+    "payment_method_label": "الدفع في المنشأة",
+    "customer_name": "طالب تجريبي",
+    "phone": "0599000111",
+    "notes": "t",
+    "answers": { "team_name": "T", "players_count": 10 },
+    "answers_display": [
+      { "key": "team_name", "label": "اسم الفريق", "type": "text", "value": "T", "display": "T", "unit": null },
+      { "key": "players_count", "label": "عدد اللاعبين", "type": "number", "value": 10, "display": "10 لاعب", "unit": "لاعب" }
+    ],
+    "cancel_reason": null,
+    "cancelled_late": null,
+    "reschedule_count": null,
+    "can_cancel": true,
+    "can_reschedule": true,
+    "cancel_is_late": false,
+    "can_review": false,
+    "review": null,
+    "timeline": [
+      { "status": "confirmed", "label": "مؤكد", "done": true, "at": "2026-10-29T09:12:22+00:00", "note": null },
+      { "status": "arrived", "label": "وصل", "done": false, "at": null, "note": null },
+      { "status": "in_progress", "label": "جارٍ الآن", "done": false, "at": null, "note": null },
+      { "status": "completed", "label": "مكتمل", "done": false, "at": null, "note": null }
+    ],
+    "place": {
+      "id": 29,
+      "name": "Kora",
+      "slug": "kora",
+      "logo": "https://dori.toldpath.com/uploads/places/29/7d10d204-9856-40e3-89d8-ea6afa55b371.webp",
+      "address": "Gaza, Al -Nasser",
+      "phone": "0592139424"
+    },
+    "arrived_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "created_at": "2026-10-29T09:12:22+00:00"
+  }
+}

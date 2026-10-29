@@ -1,0 +1,6 @@
+{
+  "success": false,
+  "message": "لديك حجز آخر في نفس الوقت",
+  "status": 422,
+  "error": { "code": "CUSTOMER_OVERLAP", "details": {} }
+}
