@@ -12,7 +12,9 @@ final class AuthServerError extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (failure == null) return const SizedBox.shrink();
+    if (failure == null || failure is ValidationFailure) {
+      return const SizedBox.shrink();
+    }
     return Semantics(
       liveRegion: true,
       child: Text(
