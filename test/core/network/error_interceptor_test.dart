@@ -93,6 +93,19 @@ void main() {
     expect(failure, isA<ValidationFailure>());
   });
 
+  test('preserves booking overlap message and code from the fixture', () async {
+    final fixture = jsonDecode(
+      File('test/fixtures/booking_overlap_response.json').readAsStringSync(),
+    ) as Map<String, dynamic>;
+    final failure = await mapException(
+      _badResponse(HttpStatus.unprocessableEntity, fixture),
+    );
+
+    expect(failure, isA<ValidationFailure>());
+    expect(failure.message, fixture['message']);
+    expect(failure.code, ApiErrorCodes.customerOverlap);
+  });
+
   test('maps INVALID_CREDENTIALS 422 separately from field validation', () async {
     final failure = await mapException(
       _badResponse(

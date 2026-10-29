@@ -177,4 +177,194 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get authPasswordVisibilityHidden => 'إخفاء كلمة المرور';
+
+  @override
+  String get serviceDetailsTitle => 'تفاصيل الخدمة';
+
+  @override
+  String get serviceWith => 'مع من؟';
+
+  @override
+  String get serviceAnyCourt => 'أي ملعب';
+
+  @override
+  String get serviceChooseTime => 'اختر الوقت';
+
+  @override
+  String get periodMorning => 'الصباح';
+
+  @override
+  String get periodAfternoon => 'بعد الظهر';
+
+  @override
+  String get periodEvening => 'المساء';
+
+  @override
+  String get serviceNoSlots => 'لا توجد أوقات متاحة في هذا اليوم.';
+
+  @override
+  String serviceBookAt(String time) {
+    return 'احجز في $time';
+  }
+
+  @override
+  String get serviceChooseTimeHint => 'اختر وقتًا للمتابعة';
+
+  @override
+  String seatsLeft(int count) {
+    return 'متبقٍ $count مقاعد';
+  }
+
+  @override
+  String get attributeSport => 'الرياضة';
+
+  @override
+  String get attributePlayers => 'عدد اللاعبين';
+
+  @override
+  String get attributeLighting => 'الإضاءة الليلية';
+
+  @override
+  String get yes => 'نعم';
+
+  @override
+  String get no => 'لا';
+
+  @override
+  String get relatedServices => 'خدمات ذات صلة';
+
+  @override
+  String get serviceDescription => 'الوصف';
+
+  @override
+  String get serviceAttributes => 'التفاصيل';
+
+  @override
+  String serviceRatingCount(int count) {
+    return '($count)';
+  }
+
+  @override
+  String get bookingConfirmTitle => 'تأكيد الحجز';
+
+  @override
+  String get bookingConfirm => 'تأكيد الحجز';
+
+  @override
+  String get bookingCashAtVenue => 'الدفع نقدًا في الملعب';
+
+  @override
+  String get bookingNotesHint => 'ملاحظات (اختياري)';
+
+  @override
+  String bookingRulesNote(int hours, int count) {
+    return 'يمكنك الإلغاء قبل الموعد بـ $hours ساعات على الأقل، والاحتفاظ بما يصل إلى $count حجوزات نشطة.';
+  }
+
+  @override
+  String get bookingCourt => 'الملعب';
+
+  @override
+  String get bookingDateTime => 'التاريخ والوقت';
+
+  @override
+  String get bookingDurationLabel => 'المدة';
+
+  @override
+  String get bookingTotalPrice => 'الإجمالي';
+
+  @override
+  String bookingDuration(int minutes) {
+    return '$minutes دقيقة';
+  }
+
+  @override
+  String get bookingPayment => 'الدفع';
+
+  @override
+  String get bookingSuccessTitle => 'تم تأكيد الحجز';
+
+  @override
+  String bookingNumber(String number) {
+    return 'رقم الحجز: $number';
+  }
+
+  @override
+  String bookingCode(String code) {
+    return 'رمز الحجز: $code';
+  }
+
+  @override
+  String get bookingViewBookings => 'عرض حجوزاتي';
+
+  @override
+  String get bookingBackHome => 'العودة للرئيسية';
+
+  @override
+  String get bookingsPlaceholderTitle => 'حجوزاتي';
+
+  @override
+  String get bookingsPlaceholderMessage => 'ستظهر حجوزاتك هنا.';
+
+  @override
+  String get myBookingsTitle => 'حجوزاتي';
+
+  @override
+  String get myBookingsUpcoming => 'القادمة';
+
+  @override
+  String get myBookingsPast => 'السابقة';
+
+  @override
+  String get myBookingsSignedOut => 'سجّل الدخول لعرض حجوزاتك.';
+
+  @override
+  String get myBookingsLogin => 'تسجيل الدخول';
+
+  @override
+  String get myBookingsCancellationUnavailable => 'لم يعد الإلغاء متاحًا.';
+
+  @override
+  String get myBookingsCancel => 'إلغاء الحجز';
+
+  @override
+  String get myBookingsCancelTitle => 'إلغاء هذا الحجز؟';
+
+  @override
+  String get myBookingsCancelMessage =>
+      'هل أنت متأكد من رغبتك في إلغاء هذا الحجز؟';
+
+  @override
+  String get myBookingsCancelReason => 'السبب (اختياري)';
+
+  @override
+  String get myBookingsCancelLateWarning => 'قد يُحتسب هذا الإلغاء متأخرًا.';
+
+  @override
+  String get myBookingsKeepBooking => 'الاحتفاظ بالحجز';
+
+  @override
+  String get myBookingsConfirmCancel => 'تأكيد الإلغاء';
+
+  @override
+  String get myBookingsLogout => 'تسجيل الخروج';
+
+  @override
+  String get myBookingsLogoutTitle => 'تسجيل الخروج؟';
+
+  @override
+  String get myBookingsLogoutMessage =>
+      'ستحتاج إلى تسجيل الدخول مجددًا لعرض حجوزاتك.';
+
+  @override
+  String get myBookingsCancelSuccess => 'تم إلغاء الحجز.';
+
+  @override
+  String get myBookingsCancelFailure => 'تعذّر إلغاء هذا الحجز.';
+
+  @override
+  String get myBookingsLoadMore => 'تحميل المزيد';
+
+  @override
+  String get myBookingsStatusConfirmed => 'مؤكد';
 }

@@ -10,11 +10,13 @@ final class FeaturedList extends StatelessWidget {
   const FeaturedList({
     required this.services,
     required this.currencySymbol,
+    required this.onServiceTap,
     super.key,
   });
 
   final List<ServiceEntity> services;
   final String currencySymbol;
+  final ValueChanged<ServiceEntity> onServiceTap;
 
   @override
   Widget build(BuildContext context) => Column(
@@ -32,6 +34,7 @@ final class FeaturedList extends StatelessWidget {
           itemBuilder: (context, index) => FeaturedServiceCard(
             service: services[index],
             currencySymbol: currencySymbol,
+            onTap: () => onServiceTap(services[index]),
           ),
         ),
       ),

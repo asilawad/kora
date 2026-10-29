@@ -403,6 +403,354 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'إخفاء كلمة المرور'**
   String get authPasswordVisibilityHidden;
+
+  /// No description provided for @serviceDetailsTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تفاصيل الخدمة'**
+  String get serviceDetailsTitle;
+
+  /// No description provided for @serviceWith.
+  ///
+  /// In ar, this message translates to:
+  /// **'مع من؟'**
+  String get serviceWith;
+
+  /// No description provided for @serviceAnyCourt.
+  ///
+  /// In ar, this message translates to:
+  /// **'أي ملعب'**
+  String get serviceAnyCourt;
+
+  /// No description provided for @serviceChooseTime.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر الوقت'**
+  String get serviceChooseTime;
+
+  /// No description provided for @periodMorning.
+  ///
+  /// In ar, this message translates to:
+  /// **'الصباح'**
+  String get periodMorning;
+
+  /// No description provided for @periodAfternoon.
+  ///
+  /// In ar, this message translates to:
+  /// **'بعد الظهر'**
+  String get periodAfternoon;
+
+  /// No description provided for @periodEvening.
+  ///
+  /// In ar, this message translates to:
+  /// **'المساء'**
+  String get periodEvening;
+
+  /// No description provided for @serviceNoSlots.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا توجد أوقات متاحة في هذا اليوم.'**
+  String get serviceNoSlots;
+
+  /// No description provided for @serviceBookAt.
+  ///
+  /// In ar, this message translates to:
+  /// **'احجز في {time}'**
+  String serviceBookAt(String time);
+
+  /// No description provided for @serviceChooseTimeHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'اختر وقتًا للمتابعة'**
+  String get serviceChooseTimeHint;
+
+  /// No description provided for @seatsLeft.
+  ///
+  /// In ar, this message translates to:
+  /// **'متبقٍ {count} مقاعد'**
+  String seatsLeft(int count);
+
+  /// No description provided for @attributeSport.
+  ///
+  /// In ar, this message translates to:
+  /// **'الرياضة'**
+  String get attributeSport;
+
+  /// No description provided for @attributePlayers.
+  ///
+  /// In ar, this message translates to:
+  /// **'عدد اللاعبين'**
+  String get attributePlayers;
+
+  /// No description provided for @attributeLighting.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإضاءة الليلية'**
+  String get attributeLighting;
+
+  /// No description provided for @yes.
+  ///
+  /// In ar, this message translates to:
+  /// **'نعم'**
+  String get yes;
+
+  /// No description provided for @no.
+  ///
+  /// In ar, this message translates to:
+  /// **'لا'**
+  String get no;
+
+  /// No description provided for @relatedServices.
+  ///
+  /// In ar, this message translates to:
+  /// **'خدمات ذات صلة'**
+  String get relatedServices;
+
+  /// No description provided for @serviceDescription.
+  ///
+  /// In ar, this message translates to:
+  /// **'الوصف'**
+  String get serviceDescription;
+
+  /// No description provided for @serviceAttributes.
+  ///
+  /// In ar, this message translates to:
+  /// **'التفاصيل'**
+  String get serviceAttributes;
+
+  /// No description provided for @serviceRatingCount.
+  ///
+  /// In ar, this message translates to:
+  /// **'({count})'**
+  String serviceRatingCount(int count);
+
+  /// No description provided for @bookingConfirmTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد الحجز'**
+  String get bookingConfirmTitle;
+
+  /// No description provided for @bookingConfirm.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد الحجز'**
+  String get bookingConfirm;
+
+  /// No description provided for @bookingCashAtVenue.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدفع نقدًا في الملعب'**
+  String get bookingCashAtVenue;
+
+  /// No description provided for @bookingNotesHint.
+  ///
+  /// In ar, this message translates to:
+  /// **'ملاحظات (اختياري)'**
+  String get bookingNotesHint;
+
+  /// No description provided for @bookingRulesNote.
+  ///
+  /// In ar, this message translates to:
+  /// **'يمكنك الإلغاء قبل الموعد بـ {hours} ساعات على الأقل، والاحتفاظ بما يصل إلى {count} حجوزات نشطة.'**
+  String bookingRulesNote(int hours, int count);
+
+  /// No description provided for @bookingCourt.
+  ///
+  /// In ar, this message translates to:
+  /// **'الملعب'**
+  String get bookingCourt;
+
+  /// No description provided for @bookingDateTime.
+  ///
+  /// In ar, this message translates to:
+  /// **'التاريخ والوقت'**
+  String get bookingDateTime;
+
+  /// No description provided for @bookingDurationLabel.
+  ///
+  /// In ar, this message translates to:
+  /// **'المدة'**
+  String get bookingDurationLabel;
+
+  /// No description provided for @bookingTotalPrice.
+  ///
+  /// In ar, this message translates to:
+  /// **'الإجمالي'**
+  String get bookingTotalPrice;
+
+  /// No description provided for @bookingDuration.
+  ///
+  /// In ar, this message translates to:
+  /// **'{minutes} دقيقة'**
+  String bookingDuration(int minutes);
+
+  /// No description provided for @bookingPayment.
+  ///
+  /// In ar, this message translates to:
+  /// **'الدفع'**
+  String get bookingPayment;
+
+  /// No description provided for @bookingSuccessTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم تأكيد الحجز'**
+  String get bookingSuccessTitle;
+
+  /// No description provided for @bookingNumber.
+  ///
+  /// In ar, this message translates to:
+  /// **'رقم الحجز: {number}'**
+  String bookingNumber(String number);
+
+  /// No description provided for @bookingCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'رمز الحجز: {code}'**
+  String bookingCode(String code);
+
+  /// No description provided for @bookingViewBookings.
+  ///
+  /// In ar, this message translates to:
+  /// **'عرض حجوزاتي'**
+  String get bookingViewBookings;
+
+  /// No description provided for @bookingBackHome.
+  ///
+  /// In ar, this message translates to:
+  /// **'العودة للرئيسية'**
+  String get bookingBackHome;
+
+  /// No description provided for @bookingsPlaceholderTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'حجوزاتي'**
+  String get bookingsPlaceholderTitle;
+
+  /// No description provided for @bookingsPlaceholderMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'ستظهر حجوزاتك هنا.'**
+  String get bookingsPlaceholderMessage;
+
+  /// No description provided for @myBookingsTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'حجوزاتي'**
+  String get myBookingsTitle;
+
+  /// No description provided for @myBookingsUpcoming.
+  ///
+  /// In ar, this message translates to:
+  /// **'القادمة'**
+  String get myBookingsUpcoming;
+
+  /// No description provided for @myBookingsPast.
+  ///
+  /// In ar, this message translates to:
+  /// **'السابقة'**
+  String get myBookingsPast;
+
+  /// No description provided for @myBookingsSignedOut.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجّل الدخول لعرض حجوزاتك.'**
+  String get myBookingsSignedOut;
+
+  /// No description provided for @myBookingsLogin.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الدخول'**
+  String get myBookingsLogin;
+
+  /// No description provided for @myBookingsCancellationUnavailable.
+  ///
+  /// In ar, this message translates to:
+  /// **'لم يعد الإلغاء متاحًا.'**
+  String get myBookingsCancellationUnavailable;
+
+  /// No description provided for @myBookingsCancel.
+  ///
+  /// In ar, this message translates to:
+  /// **'إلغاء الحجز'**
+  String get myBookingsCancel;
+
+  /// No description provided for @myBookingsCancelTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'إلغاء هذا الحجز؟'**
+  String get myBookingsCancelTitle;
+
+  /// No description provided for @myBookingsCancelMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'هل أنت متأكد من رغبتك في إلغاء هذا الحجز؟'**
+  String get myBookingsCancelMessage;
+
+  /// No description provided for @myBookingsCancelReason.
+  ///
+  /// In ar, this message translates to:
+  /// **'السبب (اختياري)'**
+  String get myBookingsCancelReason;
+
+  /// No description provided for @myBookingsCancelLateWarning.
+  ///
+  /// In ar, this message translates to:
+  /// **'قد يُحتسب هذا الإلغاء متأخرًا.'**
+  String get myBookingsCancelLateWarning;
+
+  /// No description provided for @myBookingsKeepBooking.
+  ///
+  /// In ar, this message translates to:
+  /// **'الاحتفاظ بالحجز'**
+  String get myBookingsKeepBooking;
+
+  /// No description provided for @myBookingsConfirmCancel.
+  ///
+  /// In ar, this message translates to:
+  /// **'تأكيد الإلغاء'**
+  String get myBookingsConfirmCancel;
+
+  /// No description provided for @myBookingsLogout.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الخروج'**
+  String get myBookingsLogout;
+
+  /// No description provided for @myBookingsLogoutTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'تسجيل الخروج؟'**
+  String get myBookingsLogoutTitle;
+
+  /// No description provided for @myBookingsLogoutMessage.
+  ///
+  /// In ar, this message translates to:
+  /// **'ستحتاج إلى تسجيل الدخول مجددًا لعرض حجوزاتك.'**
+  String get myBookingsLogoutMessage;
+
+  /// No description provided for @myBookingsCancelSuccess.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم إلغاء الحجز.'**
+  String get myBookingsCancelSuccess;
+
+  /// No description provided for @myBookingsCancelFailure.
+  ///
+  /// In ar, this message translates to:
+  /// **'تعذّر إلغاء هذا الحجز.'**
+  String get myBookingsCancelFailure;
+
+  /// No description provided for @myBookingsLoadMore.
+  ///
+  /// In ar, this message translates to:
+  /// **'تحميل المزيد'**
+  String get myBookingsLoadMore;
+
+  /// No description provided for @myBookingsStatusConfirmed.
+  ///
+  /// In ar, this message translates to:
+  /// **'مؤكد'**
+  String get myBookingsStatusConfirmed;
 }
 
 class _AppLocalizationsDelegate

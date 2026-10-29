@@ -78,10 +78,60 @@ abstract final class ApiResponseKeys {
   static const String perPage = 'per_page';
   static const String total = 'total';
   static const String lastPage = 'last_page';
+  static const String id = 'id';
+  static const String name = 'name';
+  static const String number = 'number';
+  static const String status = 'status';
+  static const String statusLabel = 'status_label';
+  static const String startsAt = 'starts_at';
+  static const String endsAt = 'ends_at';
+  static const String date = 'date';
+  static const String dayLabel = 'day_label';
+  static const String time = 'time';
+  static const String endTime = 'end_time';
+  static const String durationMinutes = 'duration_minutes';
+  static const String serviceId = 'service_id';
+  static const String serviceName = 'service_name';
+  static const String service = 'service';
+  static const String image = 'image';
+  static const String staffId = 'staff_id';
+  static const String staffName = 'staff_name';
+  static const String staff = 'staff';
+  static const String title = 'title';
+  static const String avatar = 'avatar';
+  static const String initials = 'initials';
+  static const String color = 'color';
+  static const String price = 'price';
+  static const String discount = 'discount';
+  static const String currencySymbol = 'currency_symbol';
+  static const String paymentMethodLabel = 'payment_method_label';
+  static const String notes = 'notes';
+  static const String answersDisplay = 'answers_display';
+  static const String key = 'key';
+  static const String label = 'label';
+  static const String type = 'type';
+  static const String value = 'value';
+  static const String display = 'display';
+  static const String unit = 'unit';
+  static const String canCancel = 'can_cancel';
+  static const String cancelIsLate = 'cancel_is_late';
+  static const String cancelReason = 'cancel_reason';
+  static const String cancelledAt = 'cancelled_at';
+  static const String createdAt = 'created_at';
+  static const String place = 'place';
+  static const String placeName = 'name';
+  static const String paymentMethod = 'payment_method';
+  static const String answers = 'answers';
+}
+
+abstract final class ApiRequestKeys {
+  static const String reason = 'reason';
 }
 
 /// Known API error codes.
 abstract final class ApiErrorCodes {
   static const String slotUnavailable = 'SLOT_UNAVAILABLE';
   static const String invalidCredentials = 'INVALID_CREDENTIALS';
+  static const String customerOverlap = 'CUSTOMER_OVERLAP';
+  static const String bookingNotCancellable = 'BOOKING_NOT_CANCELLABLE';
 }

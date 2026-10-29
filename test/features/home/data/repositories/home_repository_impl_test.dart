@@ -5,6 +5,7 @@ import 'package:kora/features/home/data/datasources/home_remote_data_source.dart
 import 'package:kora/features/home/data/models/home_data_model.dart';
 import 'package:kora/features/home/data/repositories/home_repository_impl.dart';
 import 'package:kora/features/home/domain/entities/home_data_entity.dart';
+import 'package:kora/features/home/domain/providers/place_info_provider.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/load_home_model.dart';
@@ -16,6 +17,7 @@ void main() {
   late _MockHomeRemoteDataSource dataSource;
   late HomeRepositoryImpl repository;
   late HomeDataModel model;
+  late PlaceInfoProvider placeInfoProvider;
 
   setUpAll(() async {
     model = await loadHomeModel();
@@ -23,7 +25,8 @@ void main() {
 
   setUp(() {
     dataSource = _MockHomeRemoteDataSource();
-    repository = HomeRepositoryImpl(dataSource);
+    placeInfoProvider = PlaceInfoProvider();
+    repository = HomeRepositoryImpl(dataSource, placeInfoProvider);
   });
 
   test('maps a successful model result to the domain entity', () async {
@@ -33,6 +36,7 @@ void main() {
 
     expect(result, isA<Success<HomeDataEntity>>());
     expect((result as Success<HomeDataEntity>).data, same(model));
+    expect(placeInfoProvider.place, same(model.place));
   });
 
   test('preserves the same failure', () async {
@@ -45,5 +49,6 @@ void main() {
 
     expect(result, isA<Failed<HomeDataEntity>>());
     expect((result as Failed<HomeDataEntity>).failure, same(failure));
+    expect(placeInfoProvider.place, isNull);
   });
 }

@@ -11,64 +11,71 @@ final class FeaturedServiceCard extends StatelessWidget {
   const FeaturedServiceCard({
     required this.service,
     required this.currencySymbol,
+    this.onTap,
     super.key,
   });
 
   final ServiceEntity service;
   final String currencySymbol;
+  final VoidCallback? onTap;
 
   @override
-  Widget build(BuildContext context) => Align(
-    alignment: AlignmentDirectional.topStart,
-    child: SizedBox(
-      width: HomeDimensions.featuredCardWidth,
-      child: Card(
-        margin: const EdgeInsets.all(HomeDimensions.featuredCardMargin),
-        clipBehavior: Clip.antiAlias,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: HomeDimensions.featuredImageHeight,
-              width: double.infinity,
-              child: Stack(
-                fit: StackFit.expand,
-                children: [
-                  AppNetworkImage(url: service.image),
-                  if (service.discountPercent != null)
-                    PositionedDirectional(
-                      top: HomeDimensions.smallSpacing,
-                      start: HomeDimensions.smallSpacing,
-                      child: DiscountBadge(percent: service.discountPercent!),
+  Widget build(BuildContext context) => InkWell(
+    onTap: onTap,
+    borderRadius: BorderRadius.circular(HomeDimensions.serviceCardRadius),
+    child: Align(
+      alignment: AlignmentDirectional.topStart,
+      child: SizedBox(
+        width: HomeDimensions.featuredCardWidth,
+        child: Card(
+          margin: const EdgeInsets.all(HomeDimensions.featuredCardMargin),
+          clipBehavior: Clip.antiAlias,
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: HomeDimensions.featuredImageHeight,
+                width: double.infinity,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    AppNetworkImage(url: service.image),
+                    if (service.discountPercent != null)
+                      PositionedDirectional(
+                        top: HomeDimensions.smallSpacing,
+                        start: HomeDimensions.smallSpacing,
+                        child: DiscountBadge(percent: service.discountPercent!),
+                      ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsetsDirectional.all(
+                  HomeDimensions.smallSpacing,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      service.name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
-                ],
+                    PriceTag(
+                      price: service.price,
+                      salePrice: service.salePrice == null
+                          ? null
+                          : service.finalPrice,
+                      currencySymbol: currencySymbol,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.all(
-                HomeDimensions.smallSpacing,
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    service.name,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.titleSmall,
-                  ),
-                  PriceTag(
-                    price: service.price,
-                    salePrice: service.salePrice == null
-                        ? null
-                        : service.finalPrice,
-                    currencySymbol: currencySymbol,
-                  ),
-                ],
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     ),

@@ -64,6 +64,13 @@ final class HomeLoadedView extends StatelessWidget {
                 FeaturedList(
                   services: data.featured,
                   currencySymbol: data.place.currencySymbol,
+                  onServiceTap: (service) => context.pushNamed(
+                    AppRoutes.serviceDetailsName,
+                    pathParameters: {
+                      AppRoutes.serviceIdParameter: service.id.toString(),
+                    },
+                    extra: service,
+                  ),
                 ),
               ],
               const SizedBox(height: HomeDimensions.sectionSpacing),

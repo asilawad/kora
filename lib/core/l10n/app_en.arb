@@ -57,5 +57,99 @@
   "authInvalidCredentials": "The email or password is incorrect.",
   "authSheetTitle": "Your Kora account",
   "authPasswordVisibility": "Show password",
-  "authPasswordVisibilityHidden": "Hide password"
+  "authPasswordVisibilityHidden": "Hide password",
+  "serviceDetailsTitle": "Service details",
+  "serviceWith": "With whom?",
+  "serviceAnyCourt": "Any court",
+  "serviceChooseTime": "Choose time",
+  "periodMorning": "Morning",
+  "periodAfternoon": "Afternoon",
+  "periodEvening": "Evening",
+  "serviceNoSlots": "No times are available on this day.",
+  "serviceBookAt": "Book at {time}",
+  "@serviceBookAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "serviceChooseTimeHint": "Choose a time to continue",
+  "seatsLeft": "{count} seats left",
+  "@seatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "attributeSport": "Sport",
+  "attributePlayers": "Players",
+  "attributeLighting": "Night lighting",
+  "yes": "Yes",
+  "no": "No",
+  "relatedServices": "Related services",
+  "serviceDescription": "Description",
+  "serviceAttributes": "Details",
+  "serviceRatingCount": "({count})",
+  "@serviceRatingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bookingConfirmTitle": "Confirm booking",
+  "bookingConfirm": "Confirm booking",
+  "bookingCashAtVenue": "Cash at the venue",
+  "bookingNotesHint": "Notes (optional)",
+  "bookingRulesNote": "Cancel at least {hours} hours before. You can have up to {count} active bookings.",
+  "@bookingRulesNote": {
+    "placeholders": {
+      "hours": {"type": "int"},
+      "count": {"type": "int"}
+    }
+  },
+  "bookingCourt": "Court",
+  "bookingDateTime": "Date and time",
+  "bookingDurationLabel": "Duration",
+  "bookingTotalPrice": "Total",
+  "bookingDuration": "{minutes} minutes",
+  "@bookingDuration": {
+    "placeholders": {"minutes": {"type": "int"}}
+  },
+  "bookingPayment": "Payment",
+  "bookingSuccessTitle": "Booking confirmed",
+  "bookingNumber": "Booking number: {number}",
+  "@bookingNumber": {
+    "placeholders": {"number": {"type": "String"}}
+  },
+  "bookingCode": "Booking code: {code}",
+  "@bookingCode": {
+    "placeholders": {"code": {"type": "String"}}
+  },
+  "bookingViewBookings": "View my bookings",
+  "bookingBackHome": "Back to home",
+  "bookingsPlaceholderTitle": "My bookings",
+  "bookingsPlaceholderMessage": "Your bookings will appear here.",
+  "myBookingsTitle": "My bookings",
+  "myBookingsUpcoming": "Upcoming",
+  "myBookingsPast": "Past",
+  "myBookingsSignedOut": "Sign in to view your bookings.",
+  "myBookingsLogin": "Log in",
+  "myBookingsCancellationUnavailable": "Cancellation is no longer available.",
+  "myBookingsCancel": "Cancel booking",
+  "myBookingsCancelTitle": "Cancel this booking?",
+  "myBookingsCancelMessage": "Are you sure you want to cancel this booking?",
+  "myBookingsCancelReason": "Reason (optional)",
+  "myBookingsCancelLateWarning": "This cancellation may be considered late.",
+  "myBookingsKeepBooking": "Keep booking",
+  "myBookingsConfirmCancel": "Confirm cancellation",
+  "myBookingsLogout": "Log out",
+  "myBookingsLogoutTitle": "Log out?",
+  "myBookingsLogoutMessage": "You will need to sign in again to view your bookings.",
+  "myBookingsCancelSuccess": "Booking cancelled.",
+  "myBookingsCancelFailure": "Could not cancel this booking.",
+  "myBookingsLoadMore": "Load more",
+  "myBookingsStatusConfirmed": "Confirmed"
 }

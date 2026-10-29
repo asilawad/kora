@@ -57,5 +57,99 @@
   "authInvalidCredentials": "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
   "authSheetTitle": "حسابك في كورة",
   "authPasswordVisibility": "إظهار كلمة المرور",
-  "authPasswordVisibilityHidden": "إخفاء كلمة المرور"
+  "authPasswordVisibilityHidden": "إخفاء كلمة المرور",
+  "serviceDetailsTitle": "تفاصيل الخدمة",
+  "serviceWith": "مع من؟",
+  "serviceAnyCourt": "أي ملعب",
+  "serviceChooseTime": "اختر الوقت",
+  "periodMorning": "الصباح",
+  "periodAfternoon": "بعد الظهر",
+  "periodEvening": "المساء",
+  "serviceNoSlots": "لا توجد أوقات متاحة في هذا اليوم.",
+  "serviceBookAt": "احجز في {time}",
+  "@serviceBookAt": {
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "serviceChooseTimeHint": "اختر وقتًا للمتابعة",
+  "seatsLeft": "متبقٍ {count} مقاعد",
+  "@seatsLeft": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "attributeSport": "الرياضة",
+  "attributePlayers": "عدد اللاعبين",
+  "attributeLighting": "الإضاءة الليلية",
+  "yes": "نعم",
+  "no": "لا",
+  "relatedServices": "خدمات ذات صلة",
+  "serviceDescription": "الوصف",
+  "serviceAttributes": "التفاصيل",
+  "serviceRatingCount": "({count})",
+  "@serviceRatingCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "bookingConfirmTitle": "تأكيد الحجز",
+  "bookingConfirm": "تأكيد الحجز",
+  "bookingCashAtVenue": "الدفع نقدًا في الملعب",
+  "bookingNotesHint": "ملاحظات (اختياري)",
+  "bookingRulesNote": "يمكنك الإلغاء قبل الموعد بـ {hours} ساعات على الأقل، والاحتفاظ بما يصل إلى {count} حجوزات نشطة.",
+  "@bookingRulesNote": {
+    "placeholders": {
+      "hours": {"type": "int"},
+      "count": {"type": "int"}
+    }
+  },
+  "bookingCourt": "الملعب",
+  "bookingDateTime": "التاريخ والوقت",
+  "bookingDurationLabel": "المدة",
+  "bookingTotalPrice": "الإجمالي",
+  "bookingDuration": "{minutes} دقيقة",
+  "@bookingDuration": {
+    "placeholders": {"minutes": {"type": "int"}}
+  },
+  "bookingPayment": "الدفع",
+  "bookingSuccessTitle": "تم تأكيد الحجز",
+  "bookingNumber": "رقم الحجز: {number}",
+  "@bookingNumber": {
+    "placeholders": {"number": {"type": "String"}}
+  },
+  "bookingCode": "رمز الحجز: {code}",
+  "@bookingCode": {
+    "placeholders": {"code": {"type": "String"}}
+  },
+  "bookingViewBookings": "عرض حجوزاتي",
+  "bookingBackHome": "العودة للرئيسية",
+  "bookingsPlaceholderTitle": "حجوزاتي",
+  "bookingsPlaceholderMessage": "ستظهر حجوزاتك هنا.",
+  "myBookingsTitle": "حجوزاتي",
+  "myBookingsUpcoming": "القادمة",
+  "myBookingsPast": "السابقة",
+  "myBookingsSignedOut": "سجّل الدخول لعرض حجوزاتك.",
+  "myBookingsLogin": "تسجيل الدخول",
+  "myBookingsCancellationUnavailable": "لم يعد الإلغاء متاحًا.",
+  "myBookingsCancel": "إلغاء الحجز",
+  "myBookingsCancelTitle": "إلغاء هذا الحجز؟",
+  "myBookingsCancelMessage": "هل أنت متأكد من رغبتك في إلغاء هذا الحجز؟",
+  "myBookingsCancelReason": "السبب (اختياري)",
+  "myBookingsCancelLateWarning": "قد يُحتسب هذا الإلغاء متأخرًا.",
+  "myBookingsKeepBooking": "الاحتفاظ بالحجز",
+  "myBookingsConfirmCancel": "تأكيد الإلغاء",
+  "myBookingsLogout": "تسجيل الخروج",
+  "myBookingsLogoutTitle": "تسجيل الخروج؟",
+  "myBookingsLogoutMessage": "ستحتاج إلى تسجيل الدخول مجددًا لعرض حجوزاتك.",
+  "myBookingsCancelSuccess": "تم إلغاء الحجز.",
+  "myBookingsCancelFailure": "تعذّر إلغاء هذا الحجز.",
+  "myBookingsLoadMore": "تحميل المزيد",
+  "myBookingsStatusConfirmed": "مؤكد"
 }

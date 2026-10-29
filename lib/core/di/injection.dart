@@ -35,6 +35,14 @@ import '../../features/auth/domain/usecases/login_use_case.dart';
 import '../../features/auth/domain/usecases/logout_use_case.dart';
 import '../../features/auth/domain/usecases/register_use_case.dart';
 import '../../features/auth/presentation/cubit/auth_cubit.dart';
+import '../../features/home/domain/providers/place_info_provider.dart';
+import '../../features/booking/data/datasources/booking_remote_data_source.dart';
+import '../../features/booking/data/datasources/booking_remote_data_source_impl.dart';
+import '../../features/booking/data/repositories/booking_repository_impl.dart';
+import '../../features/booking/domain/repositories/booking_repository.dart';
+import '../../features/booking/domain/usecases/create_booking_use_case.dart';
+import '../../features/booking/presentation/cubit/booking_cubit.dart';
+import '../../features/my_bookings/di/my_bookings_dependencies.dart';
 
 final sl = GetIt.instance;
 
@@ -61,16 +69,21 @@ Future<void> configureDependencies() async {
   _registerServiceDetailsDependencies();
   _registerAuthDependencies();
   _registerBookingsDependencies();
+  registerMyBookingsDependencies(sl);
   sl<AuthInterceptor>().onUnauthorized =
       () => sl<AuthCubit>().handleUnauthorized();
 }
 
 void _registerHomeDependencies() {
+  sl.registerLazySingleton<PlaceInfoProvider>(PlaceInfoProvider.new);
   sl.registerLazySingleton<HomeRemoteDataSource>(
     () => HomeRemoteDataSourceImpl(sl<DioClient>()),
   );
   sl.registerLazySingleton<HomeRepository>(
-    () => HomeRepositoryImpl(sl<HomeRemoteDataSource>()),
+    () => HomeRepositoryImpl(
+      sl<HomeRemoteDataSource>(),
+      sl<PlaceInfoProvider>(),
+    ),
   );
   sl.registerLazySingleton<GetHomeUseCase>(
     () => GetHomeUseCase(sl<HomeRepository>()),
@@ -78,7 +91,20 @@ void _registerHomeDependencies() {
   sl.registerFactory<HomeCubit>(() => HomeCubit(sl<GetHomeUseCase>()));
 }
 
-void _registerBookingsDependencies() {}
+void _registerBookingsDependencies() {
+  sl.registerLazySingleton<BookingRemoteDataSource>(
+    () => BookingRemoteDataSourceImpl(sl<DioClient>()),
+  );
+  sl.registerLazySingleton<BookingRepository>(
+    () => BookingRepositoryImpl(sl<BookingRemoteDataSource>()),
+  );
+  sl.registerLazySingleton<CreateBookingUseCase>(
+    () => CreateBookingUseCase(sl<BookingRepository>()),
+  );
+  sl.registerFactory<BookingCubit>(
+    () => BookingCubit(sl<CreateBookingUseCase>()),
+  );
+}
 
 void _registerServicesDependencies() {
   sl.registerLazySingleton<ServicesRemoteDataSource>(

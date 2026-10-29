@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/error/failure_message.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
+import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/app_empty_view.dart';
 import '../../../../core/widgets/app_error_view.dart';
@@ -73,6 +75,22 @@ final class ServicesResultsSliver extends StatelessWidget {
             itemBuilder: (context, index) => ServiceCard(
               service: state.items[index],
               currencySymbol: currencySymbol,
+              onBook: () => context.pushNamed(
+                AppRoutes.serviceDetailsName,
+                pathParameters: {
+                  AppRoutes.serviceIdParameter:
+                      state.items[index].id.toString(),
+                },
+                extra: state.items[index],
+              ),
+              onTap: () => context.pushNamed(
+                AppRoutes.serviceDetailsName,
+                pathParameters: {
+                  AppRoutes.serviceIdParameter:
+                      state.items[index].id.toString(),
+                },
+                extra: state.items[index],
+              ),
             ),
           ),
         ),
