@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kora/features/home/data/models/home_data_model.dart';
 import 'package:kora/features/home/presentation/widgets/home_dimensions.dart';
 import 'package:kora/features/home/presentation/widgets/service_card.dart';
+import 'package:kora/core/widgets/soft_card.dart';
 
 import '../../helpers/load_home_model.dart';
 import '../../../../helpers/pump_app.dart';
@@ -62,11 +63,14 @@ void main() {
 
     final buttonFinder = find.ancestor(
       of: find.text('احجز الآن'),
-      matching: find.byType(ElevatedButton),
+      matching: find.byType(FilledButton),
     );
     final buttonSize = tester.getSize(buttonFinder);
     expect(buttonSize.height, HomeDimensions.serviceBookButtonHeight);
-    expect(buttonSize.width, lessThan(tester.getSize(find.byType(Card)).width));
+    expect(
+      buttonSize.width,
+      lessThan(tester.getSize(find.byType(SoftCard)).width),
+    );
 
     await tester.tap(buttonFinder);
 

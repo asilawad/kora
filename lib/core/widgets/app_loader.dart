@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../theme/app_colors.dart';
 import 'widget_dimensions.dart';
 
 final class AppLoader extends StatelessWidget {
@@ -9,6 +10,7 @@ final class AppLoader extends StatelessWidget {
   Widget build(BuildContext context) => const Center(
     child: CircularProgressIndicator(
       strokeWidth: WidgetDimensions.loaderStrokeWidth,
+      color: AppColors.primary,
     ),
   );
 }

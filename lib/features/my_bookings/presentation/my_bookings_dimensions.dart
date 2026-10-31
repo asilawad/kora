@@ -12,4 +12,9 @@ abstract final class MyBookingsDimensions {
   static const double signedOutIconSize = 64;
   static const double loadMoreExtent = 240;
   static const double bottomListPadding = 24;
+  static const double dateBlockSize = 60;
+  static const double metaIconSize = 16;
+  static const double cancelHeight = 40;
+  static const double segmentHeight = 48;
+  static const double segmentPadding = 4;
 }

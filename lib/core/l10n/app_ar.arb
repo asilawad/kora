@@ -42,6 +42,8 @@
   "noResultsForSearch": "لم نعثر على خدمات تطابق بحثك.",
   "loadMoreFailed": "تعذّر تحميل المزيد. حاول مرة أخرى.",
   "homeCategories": "الفئات",
+  "homeOffers": "عروض مميزة",
+  "homeBrowseAll": "تصفح جميع الخدمات",
   "homeSearchHint": "ابحث عن الملاعب والخدمات",
   "authLogin": "تسجيل الدخول",
   "authRegister": "إنشاء حساب",
@@ -108,8 +110,12 @@
   "bookingRulesNote": "يمكنك الإلغاء قبل الموعد بـ {hours} ساعات على الأقل، والاحتفاظ بما يصل إلى {count} حجوزات نشطة.",
   "@bookingRulesNote": {
     "placeholders": {
-      "hours": {"type": "int"},
-      "count": {"type": "int"}
+      "hours": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
     }
   },
   "bookingCourt": "الملعب",
@@ -118,17 +124,29 @@
   "bookingTotalPrice": "الإجمالي",
   "bookingDuration": "{minutes} دقيقة",
   "@bookingDuration": {
-    "placeholders": {"minutes": {"type": "int"}}
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
   },
   "bookingPayment": "الدفع",
   "bookingSuccessTitle": "تم تأكيد الحجز",
   "bookingNumber": "رقم الحجز: {number}",
   "@bookingNumber": {
-    "placeholders": {"number": {"type": "String"}}
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
   },
   "bookingCode": "رمز الحجز: {code}",
   "@bookingCode": {
-    "placeholders": {"code": {"type": "String"}}
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
   },
   "bookingViewBookings": "عرض حجوزاتي",
   "bookingBackHome": "العودة للرئيسية",
@@ -153,5 +171,14 @@
   "myBookingsCancelSuccess": "تم إلغاء الحجز.",
   "myBookingsCancelFailure": "تعذّر إلغاء هذا الحجز.",
   "myBookingsLoadMore": "تحميل المزيد",
-  "myBookingsStatusConfirmed": "مؤكد"
+  "myBookingsStatusConfirmed": "مؤكد",
+  "bookingCodeCopied": "تم نسخ الرمز",
+  "bookingCopyCode": "نسخ الرمز",
+  "navigationServices": "الخدمات",
+  "navigationAccount": "حسابي",
+  "accountTitle": "حسابي",
+  "accountGuestTitle": "أهلاً بك في كورة",
+  "accountGuestSubtitle": "سجّل دخولك لإدارة حجوزاتك وحسابك.",
+  "accountContact": "تواصل معنا",
+  "accountCopied": "تم النسخ"
 }

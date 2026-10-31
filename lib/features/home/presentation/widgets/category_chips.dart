@@ -19,7 +19,7 @@ final class CategoryChips extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-    height: HomeDimensions.categoryRadius * 2,
+    height: HomeDimensions.tapTargetHeight,
     child: ListView.separated(
       scrollDirection: Axis.horizontal,
       itemCount: categories.length + 1,

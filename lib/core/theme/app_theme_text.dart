@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'app_colors.dart';
 import 'app_theme_tokens.dart';
+import 'app_text_styles.dart';
 
 abstract final class AppThemeText {
   static TextStyle style(
@@ -9,6 +10,7 @@ abstract final class AppThemeText {
     FontWeight weight, {
     Color color = AppColors.textPrimary,
   }) => TextStyle(
+    fontFamily: AppTextStyles.fontFamily,
     fontSize: size,
     fontWeight: weight,
     color: color,
@@ -16,19 +18,22 @@ abstract final class AppThemeText {
   );
 
   static final TextTheme theme = TextTheme(
-    headlineMedium: style(AppThemeTokens.fsHeadline, FontWeight.w700),
+    displayLarge: AppTextStyles.displayLarge,
+    headlineLarge: AppTextStyles.headline,
+    headlineMedium: AppTextStyles.headline,
+    headlineSmall: AppTextStyles.headline,
     titleLarge: style(AppThemeTokens.fsTitleLg, FontWeight.w700),
     titleMedium: style(AppThemeTokens.fsTitleMd, FontWeight.w600),
-    titleSmall: style(AppThemeTokens.fsBody, FontWeight.w600),
-    bodyLarge: style(AppThemeTokens.fsBody, FontWeight.w400),
-    bodyMedium: style(AppThemeTokens.fsBodySm, FontWeight.w400),
+    titleSmall: AppTextStyles.subtitle,
+    bodyLarge: AppTextStyles.body,
+    bodyMedium: AppTextStyles.body,
     bodySmall: style(
       AppThemeTokens.fsCaption,
-      FontWeight.w400,
+      FontWeight.w500,
       color: AppColors.textSecondary,
     ),
-    labelLarge: style(AppThemeTokens.fsBody, FontWeight.w600),
-    labelMedium: style(AppThemeTokens.fsBodySm, FontWeight.w600),
-    labelSmall: style(AppThemeTokens.fsCaption, FontWeight.w600),
+    labelLarge: AppTextStyles.bodyStrong,
+    labelMedium: AppTextStyles.bodyStrong,
+    labelSmall: AppTextStyles.caption,
   );
 }

@@ -126,6 +126,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get homeCategories => 'Categories';
 
   @override
+  String get homeOffers => 'Special offers';
+
+  @override
+  String get homeBrowseAll => 'Browse all services';
+
+  @override
   String get homeSearchHint => 'Search courts and services';
 
   @override
@@ -370,4 +376,32 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get myBookingsStatusConfirmed => 'Confirmed';
+
+  @override
+  String get bookingCodeCopied => 'Code copied';
+
+  @override
+  String get bookingCopyCode => 'Copy code';
+
+  @override
+  String get navigationServices => 'Services';
+
+  @override
+  String get navigationAccount => 'Account';
+
+  @override
+  String get accountTitle => 'My account';
+
+  @override
+  String get accountGuestTitle => 'Welcome to Kora';
+
+  @override
+  String get accountGuestSubtitle =>
+      'Sign in to manage your bookings and account.';
+
+  @override
+  String get accountContact => 'Contact us';
+
+  @override
+  String get accountCopied => 'Copied';
 }

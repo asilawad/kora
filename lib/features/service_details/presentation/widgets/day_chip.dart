@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_curves.dart';
+import '../../../../core/theme/app_radius.dart';
+import '../../../../core/theme/app_shadows.dart';
 import '../../domain/entities/availability_day_entity.dart';
 import 'service_details_dimensions.dart';
 
@@ -32,44 +36,58 @@ final class DayChip extends StatelessWidget {
       button: true,
       enabled: _enabled,
       selected: selected,
-      child: InkWell(
-        borderRadius: BorderRadius.circular(
-          ServiceDetailsDimensions.smallSpacing,
-        ),
-        onTap: _enabled ? () => onSelected?.call(day.date) : null,
-        child: AnimatedContainer(
-          duration: ServiceDetailsDimensions.galleryIndicatorDuration,
-          width: ServiceDetailsDimensions.dayChipWidth,
-          height: ServiceDetailsDimensions.dayChipHeight,
-          padding: const EdgeInsetsDirectional.all(
-            ServiceDetailsDimensions.smallSpacing,
-          ),
-          decoration: BoxDecoration(
-            color: selected ? AppColors.primary : AppColors.surface,
-            border: Border.all(
-              color: _enabled ? AppColors.border : AppColors.grey200,
-            ),
-            borderRadius: BorderRadius.circular(
+      child: Material(
+        color: AppColors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(AppRadius.md),
+          onTap: _enabled
+              ? () {
+                  HapticFeedback.selectionClick();
+                  onSelected?.call(day.date);
+                }
+              : null,
+          child: AnimatedContainer(
+            duration: ServiceDetailsDimensions.galleryIndicatorDuration,
+            curve: AppCurves.standard,
+            width: ServiceDetailsDimensions.dayChipWidth,
+            height: ServiceDetailsDimensions.dayChipHeight,
+            padding: const EdgeInsetsDirectional.all(
               ServiceDetailsDimensions.smallSpacing,
             ),
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                weekday,
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: _textColor,
-                ),
+            decoration: BoxDecoration(
+              color: selected
+                  ? AppColors.primary
+                  : _enabled
+                  ? AppColors.surface
+                  : AppColors.surfaceMuted,
+              border: Border.all(
+                color: selected
+                    ? AppColors.primary
+                    : _enabled
+                    ? AppColors.border
+                    : AppColors.surfaceMuted,
               ),
-              Text(
-                dayNumber,
-                style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  color: _textColor,
-                  fontWeight: FontWeight.bold,
+              borderRadius: BorderRadius.circular(AppRadius.md),
+              boxShadow: selected ? AppShadows.card : const [],
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  weekday,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    color: _textColor,
+                  ),
                 ),
-              ),
-            ],
+                Text(
+                  dayNumber,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    color: _textColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

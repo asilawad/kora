@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kora/core/l10n/generated/app_localizations.dart';
 import 'package:kora/features/app_shell/presentation/app_shell.dart';
 import 'package:kora/features/app_shell/presentation/app_shell_navigation.dart';
+import 'package:kora/features/app_shell/presentation/floating_navigation_bar.dart';
 
 void main() {
   testWidgets('switches tabs and reselecting a tab returns to its root', (
@@ -14,6 +15,9 @@ void main() {
     await tester.pumpWidget(_TestApp(router: router));
     await tester.pumpAndSettle();
 
+    expect(find.byType(FloatingNavigationBar), findsOneWidget);
+    expect(find.text('الرئيسية'), findsOneWidget);
+    expect(find.text('حجوزاتي'), findsOneWidget);
     expect(find.text('home root'), findsOneWidget);
     final requestsBeforeReselect =
         AppShellNavigation.homeScrollRequests.value;

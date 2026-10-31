@@ -121,6 +121,17 @@ final class MyBookingsCubit extends Cubit<MyBookingsState> {
     }
   }
 
+  Future<void> refreshLoaded() async {
+    if (state.signedOut) return;
+    await _fetch(
+      BookingScope.upcoming,
+      silent: tab(BookingScope.upcoming).items.isNotEmpty,
+    );
+    if (state.past.status != BookingsLoadStatus.initial) {
+      await _fetch(BookingScope.past, silent: true);
+    }
+  }
+
   void clearMessage() => emit(state.copyWith(clearMessage: true));
   void setSignedOut() {
     _nextRequestId(BookingScope.upcoming);

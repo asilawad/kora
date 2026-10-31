@@ -4,11 +4,12 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
-import '../../../../core/utils/price_formatter.dart';
+import '../../../../core/theme/app_durations.dart';
 import '../../../../core/widgets/primary_button.dart';
 import '../../../app_shell/presentation/app_shell_navigation.dart';
 import '../../domain/entities/booking_entity.dart';
 import '../booking_dimensions.dart';
+import '../widgets/booking_ticket_card.dart';
 
 final class BookingSuccessPage extends StatelessWidget {
   const BookingSuccessPage({required this.booking, super.key});
@@ -31,10 +32,12 @@ final class BookingSuccessPage extends StatelessWidget {
                 Text(
                   l10n.bookingSuccessTitle,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headlineSmall,
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.w800,
+                  ),
                 ),
                 const SizedBox(height: BookingDimensions.sectionSpacing),
-                _BookingSuccessSummary(booking: booking),
+                BookingTicketCard(booking: booking),
                 const SizedBox(height: BookingDimensions.sectionSpacing),
                 PrimaryButton(
                   label: l10n.bookingViewBookings,
@@ -45,7 +48,7 @@ final class BookingSuccessPage extends StatelessWidget {
                   },
                 ),
                 const SizedBox(height: BookingDimensions.itemSpacing),
-                OutlinedButton(
+                TextButton(
                   onPressed: () => context.goNamed(AppRoutes.homeName),
                   child: Text(l10n.bookingBackHome),
                 ),
@@ -61,34 +64,31 @@ final class BookingSuccessPage extends StatelessWidget {
 final class _SuccessMark extends StatelessWidget {
   const _SuccessMark();
 
-  @override
-  Widget build(BuildContext context) => const Icon(
-    Icons.check_circle,
-    color: AppColors.success,
-    size: BookingDimensions.successIconSize,
-  );
-}
-
-final class _BookingSuccessSummary extends StatelessWidget {
-  const _BookingSuccessSummary({required this.booking});
-
-  final BookingEntity booking;
+  static const double _circle = 96;
 
   @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    return Column(
-      children: [
-        Text(l10n.bookingNumber(booking.number)),
-        Text(l10n.bookingCode(booking.code)),
-        Text(booking.serviceName),
-        Text('${booking.dayLabel}, ${booking.date} · ${booking.time}'),
-        Text(
-          '${booking.currencySymbol} ${formatPrice(booking.total)}',
-          style: Theme.of(context).textTheme.titleMedium,
+  Widget build(BuildContext context) => Center(
+    child: TweenAnimationBuilder<double>(
+      tween: Tween(begin: 0, end: 1),
+      duration: AppDurations.slow,
+      curve: Curves.easeOutBack,
+      builder: (context, value, child) => Opacity(
+        opacity: value.clamp(0, 1),
+        child: Transform.scale(scale: value, child: child),
+      ),
+      child: Container(
+        width: _circle,
+        height: _circle,
+        decoration: const BoxDecoration(
+          color: AppColors.successSoft,
+          shape: BoxShape.circle,
         ),
-        Text('${l10n.bookingPayment}: ${l10n.bookingCashAtVenue}'),
-      ],
-    );
-  }
+        child: const Icon(
+          Icons.check_rounded,
+          color: AppColors.success,
+          size: BookingDimensions.successIconSize,
+        ),
+      ),
+    ),
+  );
 }

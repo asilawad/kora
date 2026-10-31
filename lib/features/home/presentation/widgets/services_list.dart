@@ -34,17 +34,24 @@ final class ServicesList extends StatelessWidget {
       if (services.isEmpty)
         AppEmptyView(message: AppLocalizations.of(context)!.homeNoServices)
       else
-        ...services.map(
-          (service) => Padding(
-            padding: const EdgeInsetsDirectional.only(
-              bottom: HomeDimensions.itemSpacing,
-            ),
-            child: ServiceCard(
-              service: service,
-              currencySymbol: currencySymbol,
-              onBook: () => onBook(service),
-              onTap: () => onTap(service),
-            ),
+        AnimatedSwitcher(
+          duration: HomeDimensions.indicatorDuration,
+          child: Column(
+            key: ValueKey(services.map((service) => service.id).join()),
+            children: [
+              for (final service in services)
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(
+                    bottom: HomeDimensions.itemSpacing,
+                  ),
+                  child: ServiceCard(
+                    service: service,
+                    currencySymbol: currencySymbol,
+                    onBook: () => onBook(service),
+                    onTap: () => onTap(service),
+                  ),
+                ),
+            ],
           ),
         ),
     ],

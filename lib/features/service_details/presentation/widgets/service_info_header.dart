@@ -5,7 +5,7 @@ import '../../../../core/theme/app_colors.dart';
 import '../../../../core/widgets/price_tag.dart';
 import '../../../home/domain/entities/rating_entity.dart';
 import '../../../home/domain/entities/service_entity.dart';
-import '../../../home/presentation/widgets/discount_badge.dart';
+import '../../../../core/widgets/discount_badge.dart';
 import 'service_details_dimensions.dart';
 
 final class ServiceInfoHeader extends StatelessWidget {
@@ -29,7 +29,9 @@ final class ServiceInfoHeader extends StatelessWidget {
       children: [
         Text(
           service.category.name,
-          style: theme.textTheme.labelLarge?.copyWith(color: AppColors.accent),
+          style: theme.textTheme.labelLarge?.copyWith(
+            color: AppColors.accentText,
+          ),
         ),
         const SizedBox(height: ServiceDetailsDimensions.smallSpacing),
         Text(service.name, style: theme.textTheme.headlineSmall),

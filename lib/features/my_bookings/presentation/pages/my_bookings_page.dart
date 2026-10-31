@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../core/di/injection.dart';
+import '../../../../core/events/bookings_events.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/router/app_routes.dart';
+import '../../../../core/widgets/segmented_tabs.dart';
 import '../../../auth/presentation/cubit/auth_cubit.dart';
 import '../../../auth/presentation/cubit/auth_state.dart';
 import '../../../auth/presentation/require_auth.dart';
 import '../../domain/entities/booking_scope.dart';
 import '../cubit/my_bookings_cubit.dart';
+import '../my_bookings_dimensions.dart';
 import '../cubit/my_bookings_state.dart';
 import '../widgets/bookings_tab_view.dart';
 import '../widgets/logout_confirmation_dialog.dart';
@@ -42,6 +45,7 @@ final class _MyBookingsContentState extends State<_MyBookingsContent>
     super.initState();
     _tabController = TabController(length: BookingScope.values.length, vsync: this)
       ..addListener(_onTabChanged);
+    BookingsEvents.changes.addListener(_onBookingsChanged);
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (mounted && context.read<AuthCubit>().state.isAuthenticated) {
         context.read<MyBookingsCubit>().ensureLoaded(BookingScope.upcoming);
@@ -49,8 +53,16 @@ final class _MyBookingsContentState extends State<_MyBookingsContent>
     });
   }
 
+  void _onBookingsChanged() {
+    if (!mounted) return;
+    if (context.read<AuthCubit>().state.isAuthenticated) {
+      context.read<MyBookingsCubit>().refreshLoaded();
+    }
+  }
+
   @override
   void dispose() {
+    BookingsEvents.changes.removeListener(_onBookingsChanged);
     _tabController
       ..removeListener(_onTabChanged)
       ..dispose();
@@ -136,12 +148,23 @@ final class _MyBookingsContentState extends State<_MyBookingsContent>
                 ],
               ),
           ],
-          bottom: TabBar(
-            controller: _tabController,
-            tabs: [
-              Tab(text: l10n.myBookingsUpcoming),
-              Tab(text: l10n.myBookingsPast),
-            ],
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(
+              MyBookingsDimensions.segmentHeight +
+                  MyBookingsDimensions.pagePadding,
+            ),
+            child: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(
+                MyBookingsDimensions.pagePadding,
+                0,
+                MyBookingsDimensions.pagePadding,
+                MyBookingsDimensions.cardSpacing,
+              ),
+              child: SegmentedTabs(
+                controller: _tabController,
+                labels: [l10n.myBookingsUpcoming, l10n.myBookingsPast],
+              ),
+            ),
           ),
         ),
         body: BlocBuilder<AuthCubit, AuthState>(

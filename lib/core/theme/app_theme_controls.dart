@@ -21,16 +21,17 @@ abstract final class AppThemeControls {
       ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
-          foregroundColor: AppColors.onPrimary,
-          disabledBackgroundColor: AppColors.grey200,
-          disabledForegroundColor: AppColors.textDisabled,
-          minimumSize: const Size.fromHeight(AppThemeTokens.buttonHeight),
+          foregroundColor: AppColors.textOnPrimary,
+          disabledBackgroundColor: AppColors.surfaceMuted,
+          disabledForegroundColor: AppColors.textTertiary,
+          minimumSize: const Size(0, AppThemeTokens.buttonHeight),
           elevation: AppThemeTokens.zeroElevation,
           shape: _shape(AppThemeTokens.radiusMd),
           textStyle: AppThemeText.style(
             AppThemeTokens.fsBody,
             FontWeight.w700,
           ),
+          overlayColor: AppColors.primaryPressed,
         ),
       );
 
@@ -54,6 +55,7 @@ abstract final class AppThemeControls {
   static final TextButtonThemeData textButton = TextButtonThemeData(
     style: TextButton.styleFrom(
       foregroundColor: AppColors.primary,
+      minimumSize: const Size(0, AppThemeTokens.minimumTapHeight),
       textStyle: AppThemeText.style(
         AppThemeTokens.fsBodySm,
         FontWeight.w600,
@@ -76,7 +78,7 @@ abstract final class AppThemeControls {
     errorStyle: AppThemeText.style(
       AppThemeTokens.fsCaption,
       FontWeight.w400,
-      color: AppColors.error,
+      color: AppColors.errorText,
     ),
     border: _inputBorder(AppColors.border, AppThemeTokens.borderWidth),
     enabledBorder: _inputBorder(AppColors.border, AppThemeTokens.borderWidth),
@@ -96,7 +98,7 @@ abstract final class AppThemeControls {
     elevation: AppThemeTokens.zeroElevation,
     margin: EdgeInsets.zero,
     shape: _shape(
-      AppThemeTokens.radiusLg,
+      AppThemeTokens.radiusMd,
       side: const BorderSide(
         color: AppColors.border,
         width: AppThemeTokens.borderWidth,
@@ -138,6 +140,20 @@ abstract final class AppThemeControls {
       borderRadius: BorderRadius.vertical(
         top: Radius.circular(AppThemeTokens.radiusXl),
       ),
+    ),
+  );
+
+  static final FilledButtonThemeData filledButton = FilledButtonThemeData(
+    style: FilledButton.styleFrom(
+      backgroundColor: AppColors.primary,
+      foregroundColor: AppColors.textOnPrimary,
+      minimumSize: const Size.fromHeight(AppThemeTokens.buttonHeight),
+      shape: _shape(AppThemeTokens.radiusMd),
+      textStyle: AppThemeText.style(
+        AppThemeTokens.fsBody,
+        FontWeight.w700,
+      ),
+      overlayColor: AppColors.primaryPressed,
     ),
   );
 }

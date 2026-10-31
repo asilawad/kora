@@ -55,7 +55,7 @@ final class SlotsSection extends StatelessWidget {
     }
     if (slots.isEmpty) return AppEmptyView(message: l10n.serviceNoSlots);
 
-    final grouped = groupSlotsByPeriod(slots);
+    final grouped = groupSlotsByPeriod(_displaySlots(slots));
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -83,6 +83,16 @@ final class SlotsSection extends StatelessWidget {
           ],
       ],
     );
+  }
+
+  /// Shows half-hour starts only (:00 / :30) to keep the grid calm; falls
+  /// back to every slot when the day has no half-hour starts at all.
+  List<TimeSlotEntity> _displaySlots(List<TimeSlotEntity> all) {
+    final filtered = all.where((slot) {
+      final minutes = int.tryParse(slot.time.split(':').last);
+      return minutes != null && minutes % 30 == 0;
+    }).toList();
+    return filtered.isEmpty ? all : filtered;
   }
 
   String _periodTitle(AppLocalizations l10n, SlotPeriod period) =>

@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:get_it/get_it.dart';
 import 'package:kora/core/di/injection.dart';
 import 'package:kora/core/error/failure.dart';
+import 'package:kora/core/widgets/skeleton.dart';
 import 'package:kora/features/home/data/models/home_data_model.dart';
 import 'package:kora/features/home/presentation/cubit/home_cubit.dart';
 import 'package:kora/features/home/presentation/cubit/home_state.dart';
@@ -43,7 +44,7 @@ void main() {
     showState(const HomeLoading());
     await pumpApp(tester, const HomePage());
 
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
+    expect(find.byType(Skeleton), findsOneWidget);
   });
 
   testWidgets('shows failure and retries on tap', (tester) async {

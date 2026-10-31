@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../theme/app_colors.dart';
+import '../theme/app_text_styles.dart';
 import '../utils/price_formatter.dart';
 import 'widget_dimensions.dart';
 
@@ -22,7 +23,7 @@ final class PriceTag extends StatelessWidget {
     children: [
       Text(
         '$currencySymbol ${formatPrice(salePrice ?? price)}',
-        style: const TextStyle(color: AppColors.primary),
+        style: AppTextStyles.price,
       ),
       if (salePrice != null) ...[
         Text(

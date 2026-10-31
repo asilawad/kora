@@ -42,6 +42,7 @@ Future<void> chooseServiceCourtDayAndSlot(
   }
   final serviceCard = find.byType(FeaturedServiceCard).first;
   await tester.ensureVisible(serviceCard);
+  await pumpFrames(tester);
   await tester.tap(serviceCard);
   await pumpFrames(tester);
   final detailView = find.byType(ServiceDetailsView);

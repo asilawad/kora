@@ -20,7 +20,7 @@ final class AuthServerError extends StatelessWidget {
       child: Text(
         failure!.localized(AppLocalizations.of(context)!),
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-          color: AppColors.error,
+          color: AppColors.errorText,
         ),
       ),
     );

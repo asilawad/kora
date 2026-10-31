@@ -24,9 +24,7 @@ final class CourtAvatar extends StatelessWidget {
             padding: const EdgeInsets.all(HomeDimensions.courtRingWidth),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: color.withValues(
-                alpha: HomeDimensions.badgeOverlayOpacity,
-              ),
+              color: AppColors.surface,
               border: Border.all(
                 color: color,
                 width: HomeDimensions.courtRingWidth,
@@ -51,7 +49,7 @@ final class CourtAvatar extends StatelessWidget {
             overflow: TextOverflow.ellipsis,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelMedium?.copyWith(
-              color: AppColors.textSecondary,
+              color: AppColors.textPrimary,
             ),
           ),
         ],

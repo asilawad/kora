@@ -46,15 +46,7 @@ void main() {
       find.text(AppLocalizations.of(context)!.errorNetwork),
       findsOneWidget,
     );
-    tester
-        .widget<ElevatedButton>(
-          find.descendant(
-            of: find.byType(AppErrorView),
-            matching: find.byType(ElevatedButton),
-          ),
-        )
-        .onPressed!
-        .call();
+    await tester.tap(find.text(AppLocalizations.of(context)!.retry));
     expect(retried, isTrue);
   });
 

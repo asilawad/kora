@@ -6,40 +6,41 @@ import 'app_theme_tokens.dart';
 
 abstract final class AppThemeSurfaces {
   static final AppBarTheme appBar = AppBarTheme(
-    backgroundColor: AppColors.surface,
+    backgroundColor: AppColors.transparent,
     foregroundColor: AppColors.textPrimary,
     elevation: AppThemeTokens.zeroElevation,
     scrolledUnderElevation: AppThemeTokens.zeroElevation,
     centerTitle: true,
+    iconTheme: const IconThemeData(color: AppColors.textPrimary),
+    actionsIconTheme: const IconThemeData(color: AppColors.textPrimary),
     titleTextStyle: AppThemeText.style(
       AppThemeTokens.fsTitleMd,
       FontWeight.w700,
     ),
   );
 
-  static final NavigationBarThemeData navigationBar =
-      NavigationBarThemeData(
-        height: AppThemeTokens.navBarHeight,
-        backgroundColor: AppColors.surface,
-        indicatorColor: AppColors.primarySoft,
-        elevation: AppThemeTokens.zeroElevation,
-        labelTextStyle: WidgetStateProperty.resolveWith(
-          (states) => AppThemeText.style(
-            AppThemeTokens.fsCaption,
-            FontWeight.w600,
-            color: states.contains(WidgetState.selected)
-                ? AppColors.primary
-                : AppColors.textSecondary,
-          ),
-        ),
-        iconTheme: WidgetStateProperty.resolveWith(
-          (states) => IconThemeData(
-            color: states.contains(WidgetState.selected)
-                ? AppColors.primary
-                : AppColors.textSecondary,
-          ),
-        ),
-      );
+  static final NavigationBarThemeData navigationBar = NavigationBarThemeData(
+    height: AppThemeTokens.navBarHeight,
+    backgroundColor: AppColors.surface,
+    indicatorColor: AppColors.primarySoft,
+    elevation: AppThemeTokens.zeroElevation,
+    labelTextStyle: WidgetStateProperty.resolveWith(
+      (states) => AppThemeText.style(
+        AppThemeTokens.fsCaption,
+        FontWeight.w600,
+        color: states.contains(WidgetState.selected)
+            ? AppColors.primary
+            : AppColors.textSecondary,
+      ),
+    ),
+    iconTheme: WidgetStateProperty.resolveWith(
+      (states) => IconThemeData(
+        color: states.contains(WidgetState.selected)
+            ? AppColors.primary
+            : AppColors.textSecondary,
+      ),
+    ),
+  );
 
   static final DialogThemeData dialog = DialogThemeData(
     backgroundColor: AppColors.surface,
@@ -63,7 +64,7 @@ abstract final class AppThemeSurfaces {
   );
 
   static const DividerThemeData divider = DividerThemeData(
-    color: AppColors.border,
+    color: AppColors.divider,
     thickness: AppThemeTokens.borderWidth,
     space: AppThemeTokens.borderWidth,
   );

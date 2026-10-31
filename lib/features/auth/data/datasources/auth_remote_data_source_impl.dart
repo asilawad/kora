@@ -43,7 +43,7 @@ final class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     if (data is! Map<String, dynamic>) return const Failed(UnknownFailure());
     try {
       return Success(AuthSessionModel.fromJson(data));
-    } on TypeError catch (error) {
+    } on Object catch (error) {
       return Failed(UnknownFailure(message: error.toString()));
     }
   }
@@ -52,7 +52,7 @@ final class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
     if (data is! Map<String, dynamic>) return const Failed(UnknownFailure());
     try {
       return Success(UserModel.fromJson(data));
-    } on TypeError catch (error) {
+    } on Object catch (error) {
       return Failed(UnknownFailure(message: error.toString()));
     }
   }

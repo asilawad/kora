@@ -5,7 +5,7 @@ import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/router/app_routes.dart';
 import '../../../services/presentation/pages/services_page_arguments.dart';
 import '../../domain/entities/category_entity.dart';
-import 'category_card.dart';
+import 'category_avatar_item.dart';
 import 'home_dimensions.dart';
 import 'section_header.dart';
 
@@ -36,7 +36,7 @@ final class CategoriesSection extends StatelessWidget {
                 const SizedBox(width: HomeDimensions.itemSpacing),
             itemBuilder: (context, index) {
               final category = categories[index];
-              return CategoryCard(
+              return CategoryAvatarItem(
                 category: category,
                 onTap: () => context.pushNamed(
                   AppRoutes.servicesName,

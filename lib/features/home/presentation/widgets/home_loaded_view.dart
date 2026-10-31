@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/router/app_routes.dart';
+import '../../../../core/theme/app_colors.dart';
 import '../../../services/presentation/pages/services_page_arguments.dart';
 import '../../domain/entities/home_data_entity.dart';
 import '../../domain/entities/service_entity.dart';
@@ -9,11 +10,12 @@ import '../cubit/home_state.dart';
 import 'courts_row.dart';
 import 'featured_list.dart';
 import 'home_dimensions.dart';
-import 'home_header.dart';
+import 'floating_place_header.dart';
 import 'category_chips.dart';
 import 'categories_section.dart';
 import 'home_search_bar.dart';
-import 'place_cover_card.dart';
+import 'home_section_entrance.dart';
+import 'offers_carousel.dart';
 import 'services_list.dart';
 
 final class HomeLoadedView extends StatelessWidget {
@@ -38,6 +40,7 @@ final class HomeLoadedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => RefreshIndicator(
+    color: AppColors.primary,
     onRefresh: onRefresh,
     child: CustomScrollView(
       controller: scrollController,
@@ -47,58 +50,88 @@ final class HomeLoadedView extends StatelessWidget {
           padding: const EdgeInsetsDirectional.all(HomeDimensions.pagePadding),
           sliver: SliverList(
             delegate: SliverChildListDelegate([
-              HomeHeader(place: data.place),
-              const SizedBox(height: HomeDimensions.itemSpacing),
-              HomeSearchBar(
-                categories: data.categories,
-                currencySymbol: data.place.currencySymbol,
+              HomeSectionEntrance(
+                delay: HomeDimensions.sectionDelay0,
+                child: FloatingPlaceHeader(place: data.place),
               ),
               const SizedBox(height: HomeDimensions.sectionSpacing),
-              PlaceCoverCard(place: data.place),
-              if (data.categories.isNotEmpty) ...[
-                const SizedBox(height: HomeDimensions.sectionSpacing),
-                CategoriesSection(
+              HomeSectionEntrance(
+                delay: HomeDimensions.sectionDelay1,
+                child: HomeSearchBar(
                   categories: data.categories,
                   currencySymbol: data.place.currencySymbol,
+                ),
+              ),
+              if (data.featured.any(
+                    (service) => service.discountPercent != null,
+                  ) ||
+                  data.popular.any(
+                    (service) => service.discountPercent != null,
+                  )) ...[
+                const SizedBox(height: HomeDimensions.sectionSpacing),
+                HomeSectionEntrance(
+                  delay: HomeDimensions.sectionDelay2,
+                  child: OffersCarousel(
+                    featured: data.featured,
+                    popular: data.popular,
+                    currencySymbol: data.place.currencySymbol,
+                    onServiceTap: onServiceTap,
+                  ),
+                ),
+              ],
+              if (data.categories.isNotEmpty) ...[
+                const SizedBox(height: HomeDimensions.sectionSpacing),
+                HomeSectionEntrance(
+                  delay: HomeDimensions.sectionDelay3,
+                  child: CategoriesSection(
+                    categories: data.categories,
+                    currencySymbol: data.place.currencySymbol,
+                  ),
                 ),
               ],
               if (data.featured.isNotEmpty) ...[
                 const SizedBox(height: HomeDimensions.sectionSpacing),
-                FeaturedList(
-                  services: data.featured,
-                  currencySymbol: data.place.currencySymbol,
-                  onServiceTap: (service) => context.pushNamed(
-                    AppRoutes.serviceDetailsName,
-                    pathParameters: {
-                      AppRoutes.serviceIdParameter: service.id.toString(),
-                    },
-                    extra: service,
+                HomeSectionEntrance(
+                  delay: HomeDimensions.sectionDelay4,
+                  child: FeaturedList(
+                    services: data.featured,
+                    currencySymbol: data.place.currencySymbol,
+                    onServiceTap: onServiceTap,
                   ),
                 ),
               ],
               const SizedBox(height: HomeDimensions.sectionSpacing),
-              CategoryChips(
-                categories: data.categories,
-                selectedCategoryId: state.selectedCategoryId,
-                onSelected: onCategorySelected,
+              HomeSectionEntrance(
+                delay: HomeDimensions.sectionDelay5,
+                child: CategoryChips(
+                  categories: data.categories,
+                  selectedCategoryId: state.selectedCategoryId,
+                  onSelected: onCategorySelected,
+                ),
               ),
               const SizedBox(height: HomeDimensions.sectionSpacing),
-              ServicesList(
-                services: state.filteredPopular,
-                currencySymbol: data.place.currencySymbol,
-                onBook: onBook,
-                onTap: onServiceTap,
-                onSeeAll: () => context.pushNamed(
-                  AppRoutes.servicesName,
-                  extra: ServicesPageArguments(
-                    categories: data.categories,
-                    currencySymbol: data.place.currencySymbol,
+              HomeSectionEntrance(
+                delay: HomeDimensions.sectionDelay6,
+                child: ServicesList(
+                  services: state.filteredPopular,
+                  currencySymbol: data.place.currencySymbol,
+                  onBook: onBook,
+                  onTap: onServiceTap,
+                  onSeeAll: () => context.pushNamed(
+                    AppRoutes.servicesName,
+                    extra: ServicesPageArguments(
+                      categories: data.categories,
+                      currencySymbol: data.place.currencySymbol,
+                    ),
                   ),
                 ),
               ),
               if (data.staff.isNotEmpty) ...[
                 const SizedBox(height: HomeDimensions.sectionSpacing),
-                CourtsRow(courts: data.staff),
+                HomeSectionEntrance(
+                  delay: HomeDimensions.sectionDelay6,
+                  child: CourtsRow(courts: data.staff),
+                ),
               ],
             ]),
           ),

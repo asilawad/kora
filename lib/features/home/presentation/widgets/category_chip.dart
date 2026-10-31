@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/app_colors.dart';
-import 'home_dimensions.dart';
+import '../../../../core/widgets/chip_pill.dart';
 
 final class CategoryChip extends StatelessWidget {
   const CategoryChip({
@@ -18,21 +17,9 @@ final class CategoryChip extends StatelessWidget {
   final ValueChanged<int?> onSelected;
 
   @override
-  Widget build(BuildContext context) => ChoiceChip(
-    label: Text(label),
+  Widget build(BuildContext context) => ChipPill(
+    label: label,
     selected: selected,
-    onSelected: (_) => onSelected(id),
-    selectedColor: AppColors.primary,
-    backgroundColor: AppColors.surface,
-    side: BorderSide(
-      color: selected ? AppColors.primary : AppColors.border,
-      width: HomeDimensions.categoryBorderWidth,
-    ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(HomeDimensions.categoryRadius),
-    ),
-    labelStyle: TextStyle(
-      color: selected ? AppColors.onPrimary : AppColors.textPrimary,
-    ),
+    onSelected: () => onSelected(id),
   );
 }

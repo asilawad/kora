@@ -12,6 +12,8 @@ final class KoraApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp.router(
     onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
     theme: AppTheme.light,
+    themeMode: ThemeMode.light,
+    debugShowCheckedModeBanner: false,
     locale: const Locale(AppConstants.defaultLocaleCode),
     supportedLocales: AppConstants.supportedLocaleCodes
         .map(Locale.new)

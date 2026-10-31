@@ -12,6 +12,7 @@ final class ServicesPage extends StatelessWidget {
     this.initialCategoryId,
     this.autofocusSearch = false,
     this.currencySymbol = '',
+    this.showBack = true,
     super.key,
   });
 
@@ -19,6 +20,7 @@ final class ServicesPage extends StatelessWidget {
   final int? initialCategoryId;
   final bool autofocusSearch;
   final String currencySymbol;
+  final bool showBack;
 
   @override
   Widget build(BuildContext context) => BlocProvider(
@@ -28,6 +30,7 @@ final class ServicesPage extends StatelessWidget {
       categories: categories,
       autofocusSearch: autofocusSearch,
       currencySymbol: currencySymbol,
+      showBack: showBack,
     ),
   );
 }

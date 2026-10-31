@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_durations.dart';
+import '../../../../core/theme/app_shadows.dart';
 import '../../../../core/utils/price_formatter.dart';
 import '../../../../core/widgets/primary_button.dart';
 import '../../../home/domain/entities/service_entity.dart';
@@ -34,6 +36,7 @@ final class StickyBookBar extends StatelessWidget {
         ),
         decoration: const BoxDecoration(
           color: AppColors.surface,
+          boxShadow: AppShadows.nav,
           border: Border(
             top: BorderSide(
               color: AppColors.border,
@@ -41,24 +44,32 @@ final class StickyBookBar extends StatelessWidget {
             ),
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        child: Row(
           children: [
-            _BookingSummary(
-              service: service,
-              slot: slot,
-              currencySymbol: currencySymbol,
+            Expanded(
+              child: AnimatedSwitcher(
+                duration: AppDurations.normal,
+                child: _BookingSummary(
+                  key: ValueKey(slot?.startsAt),
+                  service: service,
+                  slot: slot,
+                  currencySymbol: currencySymbol,
+                ),
+              ),
             ),
             const SizedBox(
-              height: ServiceDetailsDimensions.stickyBarButtonSpacing,
+              width: ServiceDetailsDimensions.stickyBarButtonSpacing,
             ),
-            PrimaryButton(
-              label: selectedSlot == null
-                  ? l10n.serviceChooseTimeHint
-                  : l10n.serviceBookAt(selectedSlot.time),
-              onPressed: selectedSlot == null
-                  ? null
-                  : () => onBook?.call(selectedSlot),
+            Expanded(
+              flex: 2,
+              child: PrimaryButton(
+                label: selectedSlot == null
+                    ? l10n.serviceChooseTimeHint
+                    : l10n.serviceBookAt(selectedSlot.time),
+                onPressed: selectedSlot == null
+                    ? null
+                    : () => onBook?.call(selectedSlot),
+              ),
             ),
           ],
         ),
@@ -72,6 +83,7 @@ final class _BookingSummary extends StatelessWidget {
     required this.service,
     required this.slot,
     required this.currencySymbol,
+    super.key,
   });
 
   final ServiceEntity? service;

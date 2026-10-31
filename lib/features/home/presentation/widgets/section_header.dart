@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
-import '../../../../core/theme/app_colors.dart';
-import 'home_dimensions.dart';
+import '../../../../core/widgets/section_title.dart';
 
 final class SectionHeader extends StatelessWidget {
   const SectionHeader({
@@ -15,21 +14,11 @@ final class SectionHeader extends StatelessWidget {
   final VoidCallback? onSeeAll;
 
   @override
-  Widget build(BuildContext context) => Row(
-    children: [
-      Expanded(
-        child: Text(title, style: Theme.of(context).textTheme.titleLarge),
-      ),
-      if (onSeeAll != null)
-        TextButton(
-          onPressed: onSeeAll,
-          child: Text(
-            AppLocalizations.of(context)!.homeSeeAll,
-            style: const TextStyle(color: AppColors.accent),
-          ),
-        ),
-      if (onSeeAll != null)
-        const SizedBox(width: HomeDimensions.smallSpacing),
-    ],
+  Widget build(BuildContext context) => SectionTitle(
+    title: title,
+    trailingText: onSeeAll == null
+        ? null
+        : AppLocalizations.of(context)!.homeSeeAll,
+    onTrailingTap: onSeeAll,
   );
 }

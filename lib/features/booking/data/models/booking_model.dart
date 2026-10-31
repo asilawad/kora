@@ -87,10 +87,10 @@ final class BookingModel extends BookingEntity {
       StaffRefEntity(
         id: _int(json[ApiResponseKeys.id]),
         name: json[ApiResponseKeys.name] as String,
-        title: json[ApiResponseKeys.title] as String,
+        title: json[ApiResponseKeys.title] as String? ?? '',
         avatar: json[ApiResponseKeys.avatar] as String? ?? '',
-        initials: json[ApiResponseKeys.initials] as String,
-        color: json[ApiResponseKeys.color] as String,
+        initials: json[ApiResponseKeys.initials] as String? ?? '',
+        color: json[ApiResponseKeys.color] as String? ?? '#0A57B8',
       );
 
   static Map<String, dynamic> _map(Object? value) =>

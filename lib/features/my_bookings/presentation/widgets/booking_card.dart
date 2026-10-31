@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/theme/app_colors.dart';
+import '../../../../core/theme/app_radius.dart';
 import '../../../../core/utils/price_formatter.dart';
-import '../../../../core/widgets/app_network_image.dart';
+import '../../../../core/widgets/soft_card.dart';
+import '../../../../core/widgets/status_pill.dart';
 import '../../../booking/domain/entities/booking_entity.dart';
 import '../../../booking/domain/entities/booking_status.dart';
 import '../my_bookings_dimensions.dart';
@@ -24,101 +26,89 @@ final class BookingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    return Card(
-      margin: const EdgeInsets.only(bottom: MyBookingsDimensions.cardSpacing),
-      child: Padding(
-        padding: const EdgeInsets.all(MyBookingsDimensions.cardPadding),
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(
+        bottom: MyBookingsDimensions.cardSpacing,
+      ),
+      child: SoftCard(
+        padding: const EdgeInsetsDirectional.all(
+          MyBookingsDimensions.cardPadding,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              width: MyBookingsDimensions.imageSize,
-              height: MyBookingsDimensions.imageSize,
-              child: AppNetworkImage(
-                url: booking.serviceImage,
-                borderRadius: BorderRadius.circular(
-                  MyBookingsDimensions.imageRadius,
-                ),
-              ),
-            ),
+            _DateBlock(date: booking.date, dayLabel: booking.dayLabel),
             const SizedBox(width: MyBookingsDimensions.cardSpacing),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(
+                    booking.serviceName,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: Theme.of(context).textTheme.titleSmall,
+                  ),
+                  const SizedBox(height: MyBookingsDimensions.smallSpacing),
+                  _MetaRow(
+                    icon: Icons.schedule_rounded,
+                    text: '${booking.time} - ${booking.endTime}',
+                  ),
+                  if (booking.staff != null)
+                    _MetaRow(
+                      icon: Icons.sports_soccer_rounded,
+                      text: booking.staff!.name,
+                    ),
+                  const SizedBox(height: MyBookingsDimensions.smallSpacing),
                   Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
                         child: Text(
-                          booking.serviceName,
-                          style: Theme.of(context).textTheme.titleSmall,
+                          '${booking.currencySymbol} ${formatPrice(booking.total)}',
+                          style: Theme.of(context).textTheme.titleSmall
+                              ?.copyWith(color: AppColors.primary),
                         ),
                       ),
-                      _BookingStatusChip(booking: booking),
+                      StatusPill(
+                        label: booking.statusLabel,
+                        variant: _variant(booking.status),
+                      ),
                     ],
                   ),
-                  if (booking.staff != null)
-                    Padding(
-                      padding: const EdgeInsets.only(
-                        top: MyBookingsDimensions.smallSpacing,
-                      ),
-                      child: Text(booking.staff!.name),
-                    ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: MyBookingsDimensions.smallSpacing,
-                    ),
-                    child: Text(
-                      '${booking.dayLabel}, ${booking.date} · ${booking.time}',
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      top: MyBookingsDimensions.smallSpacing,
-                    ),
-                    child: Text(
-                      '${booking.currencySymbol} ${formatPrice(booking.total)}',
-                      style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                        color: AppColors.primary,
-                      ),
-                    ),
-                  ),
                   if (booking.canCancel)
-                    Align(
-                      alignment: AlignmentDirectional.centerEnd,
-                      child: TextButton(
-                        onPressed: isCancelling
-                            ? null
-                            : () async {
-                                final reason = await CancelBookingDialog.show(
-                                  context,
-                                  booking,
-                                );
-                                if (reason != null) onCancel(reason);
-                              },
-                        child: isCancelling
-                            ? const SizedBox(
-                                width: MyBookingsDimensions.smallSpacing * 2,
-                                height: MyBookingsDimensions.smallSpacing * 2,
-                                child: CircularProgressIndicator(
-                                  strokeWidth:
-                                      MyBookingsDimensions.smallSpacing / 3,
-                                ),
-                              )
-                            : Text(l10n.myBookingsCancel),
-                      ),
+                    _CancelPill(
+                      isCancelling: isCancelling,
+                      onPressed: () async {
+                        final reason = await CancelBookingDialog.show(
+                          context,
+                          booking,
+                        );
+                        if (reason != null) onCancel(reason);
+                      },
                     )
                   else if (booking.status == BookingStatus.confirmed)
                     Padding(
-                      padding: const EdgeInsets.only(
-                        top: MyBookingsDimensions.smallSpacing,
+                      padding: const EdgeInsetsDirectional.only(
+                        top: MyBookingsDimensions.cardSpacing,
                       ),
-                      child: Text(
-                        l10n.myBookingsCancellationUnavailable,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: AppColors.textSecondary,
-                        ),
+                      child: Row(
+                        children: [
+                          const Icon(
+                            Icons.info_outline_rounded,
+                            size: MyBookingsDimensions.metaIconSize,
+                            color: AppColors.textTertiary,
+                          ),
+                          const SizedBox(
+                            width: MyBookingsDimensions.smallSpacing,
+                          ),
+                          Expanded(
+                            child: Text(
+                              l10n.myBookingsCancellationUnavailable,
+                              style: Theme.of(context).textTheme.bodySmall
+                                  ?.copyWith(color: AppColors.textSecondary),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                 ],
@@ -129,36 +119,119 @@ final class BookingCard extends StatelessWidget {
       ),
     );
   }
+
+  StatusPillVariant _variant(BookingStatus status) => switch (status) {
+    BookingStatus.confirmed => StatusPillVariant.success,
+    BookingStatus.cancelled => StatusPillVariant.error,
+    BookingStatus.inProgress => StatusPillVariant.warning,
+    BookingStatus.arrived ||
+    BookingStatus.completed => StatusPillVariant.info,
+    BookingStatus.unknown => StatusPillVariant.neutral,
+  };
 }
 
-final class _BookingStatusChip extends StatelessWidget {
-  const _BookingStatusChip({required this.booking});
+final class _DateBlock extends StatelessWidget {
+  const _DateBlock({required this.date, required this.dayLabel});
 
-  final BookingEntity booking;
+  final String date;
+  final String dayLabel;
 
   @override
-  Widget build(BuildContext context) {
-    final color = switch (booking.status) {
-      BookingStatus.confirmed => AppColors.success,
-      BookingStatus.cancelled => AppColors.grey500,
-      BookingStatus.arrived => AppColors.primary,
-      BookingStatus.inProgress => AppColors.accent,
-      BookingStatus.completed => AppColors.primaryDark,
-      BookingStatus.unknown => AppColors.grey700,
-    };
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: MyBookingsDimensions.statusHorizontalPadding,
-        vertical: MyBookingsDimensions.statusVerticalPadding,
+  Widget build(BuildContext context) => Container(
+    width: MyBookingsDimensions.dateBlockSize,
+    padding: const EdgeInsetsDirectional.symmetric(
+      vertical: MyBookingsDimensions.cardSpacing,
+    ),
+    decoration: BoxDecoration(
+      color: AppColors.primarySoft,
+      borderRadius: BorderRadius.circular(AppRadius.md),
+    ),
+    child: Column(
+      children: [
+        Text(
+          date.split('-').last,
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+            color: AppColors.primary,
+            fontWeight: FontWeight.w800,
+          ),
+        ),
+        Text(
+          dayLabel,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: Theme.of(context).textTheme.labelSmall?.copyWith(
+            color: AppColors.primary,
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+final class _MetaRow extends StatelessWidget {
+  const _MetaRow({required this.icon, required this.text});
+
+  final IconData icon;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsetsDirectional.only(
+      top: MyBookingsDimensions.smallSpacing / 2,
+    ),
+    child: Row(
+      children: [
+        Icon(
+          icon,
+          size: MyBookingsDimensions.metaIconSize,
+          color: AppColors.textTertiary,
+        ),
+        const SizedBox(width: MyBookingsDimensions.smallSpacing),
+        Expanded(
+          child: Text(
+            text,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+              color: AppColors.textSecondary,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+final class _CancelPill extends StatelessWidget {
+  const _CancelPill({required this.isCancelling, required this.onPressed});
+
+  final bool isCancelling;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+    padding: const EdgeInsetsDirectional.only(
+      top: MyBookingsDimensions.cardSpacing,
+    ),
+    child: Align(
+      alignment: AlignmentDirectional.centerEnd,
+      child: OutlinedButton(
+        onPressed: isCancelling ? null : onPressed,
+        style: OutlinedButton.styleFrom(
+          foregroundColor: AppColors.errorText,
+          side: const BorderSide(color: AppColors.errorSoft),
+          backgroundColor: AppColors.errorSoft,
+          minimumSize: const Size(0, MyBookingsDimensions.cancelHeight),
+          shape: const StadiumBorder(),
+        ),
+        child: isCancelling
+            ? const SizedBox(
+                width: MyBookingsDimensions.metaIconSize,
+                height: MyBookingsDimensions.metaIconSize,
+                child: CircularProgressIndicator(strokeWidth: 2),
+              )
+            : Text(AppLocalizations.of(context)!.myBookingsCancel),
       ),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.12),
-        borderRadius: BorderRadius.circular(MyBookingsDimensions.statusRadius),
-      ),
-      child: Text(
-        booking.statusLabel,
-        style: Theme.of(context).textTheme.labelSmall?.copyWith(color: color),
-      ),
-    );
-  }
+    ),
+  );
 }

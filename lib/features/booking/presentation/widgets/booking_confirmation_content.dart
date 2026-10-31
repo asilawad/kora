@@ -87,7 +87,7 @@ final class BookingConfirmationContent extends StatelessWidget {
             Text(
               failure!.message ?? failure!.localized(l10n),
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: AppColors.error,
+                color: AppColors.errorText,
               ),
             ),
           ],

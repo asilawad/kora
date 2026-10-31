@@ -7,11 +7,11 @@ final class CoverImageFallback extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => const ColoredBox(
-    color: AppColors.grey100,
+    color: AppColors.surfaceMuted,
     child: Center(
       child: Icon(
         Icons.image_outlined,
-        color: AppColors.grey500,
+        color: AppColors.textTertiary,
       ),
     ),
   );

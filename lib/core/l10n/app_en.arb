@@ -42,6 +42,8 @@
   "noResultsForSearch": "No services match your search.",
   "loadMoreFailed": "Couldn't load more. Try again.",
   "homeCategories": "Categories",
+  "homeOffers": "Special offers",
+  "homeBrowseAll": "Browse all services",
   "homeSearchHint": "Search courts and services",
   "authLogin": "Log in",
   "authRegister": "Create account",
@@ -108,8 +110,12 @@
   "bookingRulesNote": "Cancel at least {hours} hours before. You can have up to {count} active bookings.",
   "@bookingRulesNote": {
     "placeholders": {
-      "hours": {"type": "int"},
-      "count": {"type": "int"}
+      "hours": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
     }
   },
   "bookingCourt": "Court",
@@ -118,17 +124,29 @@
   "bookingTotalPrice": "Total",
   "bookingDuration": "{minutes} minutes",
   "@bookingDuration": {
-    "placeholders": {"minutes": {"type": "int"}}
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
   },
   "bookingPayment": "Payment",
   "bookingSuccessTitle": "Booking confirmed",
   "bookingNumber": "Booking number: {number}",
   "@bookingNumber": {
-    "placeholders": {"number": {"type": "String"}}
+    "placeholders": {
+      "number": {
+        "type": "String"
+      }
+    }
   },
   "bookingCode": "Booking code: {code}",
   "@bookingCode": {
-    "placeholders": {"code": {"type": "String"}}
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
   },
   "bookingViewBookings": "View my bookings",
   "bookingBackHome": "Back to home",
@@ -153,5 +171,14 @@
   "myBookingsCancelSuccess": "Booking cancelled.",
   "myBookingsCancelFailure": "Could not cancel this booking.",
   "myBookingsLoadMore": "Load more",
-  "myBookingsStatusConfirmed": "Confirmed"
+  "myBookingsStatusConfirmed": "Confirmed",
+  "bookingCodeCopied": "Code copied",
+  "bookingCopyCode": "Copy code",
+  "navigationServices": "Services",
+  "navigationAccount": "Account",
+  "accountTitle": "My account",
+  "accountGuestTitle": "Welcome to Kora",
+  "accountGuestSubtitle": "Sign in to manage your bookings and account.",
+  "accountContact": "Contact us",
+  "accountCopied": "Copied"
 }

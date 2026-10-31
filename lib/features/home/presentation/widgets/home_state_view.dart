@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../../../../core/error/failure_message.dart';
 import '../../../../core/l10n/generated/app_localizations.dart';
 import '../../../../core/widgets/app_error_view.dart';
-import '../../../../core/widgets/app_loader.dart';
 import '../../domain/entities/service_entity.dart';
 import '../cubit/home_state.dart';
 import 'home_loaded_view.dart';
+import 'home_skeleton.dart';
 
 final class HomeStateView extends StatelessWidget {
   const HomeStateView({
@@ -30,7 +30,7 @@ final class HomeStateView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => switch (state) {
-    HomeInitial() || HomeLoading() => const Center(child: AppLoader()),
+    HomeInitial() || HomeLoading() => const HomeSkeleton(),
     HomeFailure(:final failure) => AppErrorView(
       message: failure.localized(AppLocalizations.of(context)!),
       onRetry: onLoad,

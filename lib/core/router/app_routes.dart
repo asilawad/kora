@@ -12,4 +12,8 @@ abstract final class AppRoutes {
   static const String bookingSuccessPath = '/booking/success';
   static const String myBookingsName = bookingsName;
   static const String myBookingsPath = bookingsPath;
+  static const String servicesTabName = 'servicesTab';
+  static const String servicesTabPath = '/browse';
+  static const String accountName = 'account';
+  static const String accountPath = '/account';
 }

@@ -308,6 +308,18 @@ abstract class AppLocalizations {
   /// **'الفئات'**
   String get homeCategories;
 
+  /// No description provided for @homeOffers.
+  ///
+  /// In ar, this message translates to:
+  /// **'عروض مميزة'**
+  String get homeOffers;
+
+  /// No description provided for @homeBrowseAll.
+  ///
+  /// In ar, this message translates to:
+  /// **'تصفح جميع الخدمات'**
+  String get homeBrowseAll;
+
   /// No description provided for @homeSearchHint.
   ///
   /// In ar, this message translates to:
@@ -763,6 +775,60 @@ abstract class AppLocalizations {
   /// In ar, this message translates to:
   /// **'مؤكد'**
   String get myBookingsStatusConfirmed;
+
+  /// No description provided for @bookingCodeCopied.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم نسخ الرمز'**
+  String get bookingCodeCopied;
+
+  /// No description provided for @bookingCopyCode.
+  ///
+  /// In ar, this message translates to:
+  /// **'نسخ الرمز'**
+  String get bookingCopyCode;
+
+  /// No description provided for @navigationServices.
+  ///
+  /// In ar, this message translates to:
+  /// **'الخدمات'**
+  String get navigationServices;
+
+  /// No description provided for @navigationAccount.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسابي'**
+  String get navigationAccount;
+
+  /// No description provided for @accountTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'حسابي'**
+  String get accountTitle;
+
+  /// No description provided for @accountGuestTitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'أهلاً بك في كورة'**
+  String get accountGuestTitle;
+
+  /// No description provided for @accountGuestSubtitle.
+  ///
+  /// In ar, this message translates to:
+  /// **'سجّل دخولك لإدارة حجوزاتك وحسابك.'**
+  String get accountGuestSubtitle;
+
+  /// No description provided for @accountContact.
+  ///
+  /// In ar, this message translates to:
+  /// **'تواصل معنا'**
+  String get accountContact;
+
+  /// No description provided for @accountCopied.
+  ///
+  /// In ar, this message translates to:
+  /// **'تم النسخ'**
+  String get accountCopied;
 }
 
 class _AppLocalizationsDelegate

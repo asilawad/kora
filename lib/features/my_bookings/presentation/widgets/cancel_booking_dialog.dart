@@ -45,7 +45,7 @@ final class _CancelBookingDialogState extends State<CancelBookingDialog> {
               Text(
                 l10n.myBookingsCancelLateWarning,
                 style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: AppColors.error,
+                  color: AppColors.errorText,
                 ),
               ),
             ],

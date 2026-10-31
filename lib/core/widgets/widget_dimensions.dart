@@ -1,4 +1,5 @@
 abstract final class WidgetDimensions {
+  static const double tapTarget = 48;
   static const double spacingSmall = 8;
   static const double spacingMedium = 16;
   static const double spacingLarge = 24;
@@ -9,4 +10,32 @@ abstract final class WidgetDimensions {
   static const double badgeHorizontalPadding = 12;
   static const double badgeVerticalPadding = 6;
   static const double badgeBackgroundOpacity = 0.12;
+  static const double skeletonLineHeight = 14;
+  static const double skeletonTextWidth = 120;
+  static const double skeletonLineRadius = 8;
+  static const double shimmerTravel = 1;
+  static const double shimmerStart = 0.1;
+  static const double shimmerMiddle = 0.5;
+  static const double shimmerEnd = 0.9;
+  static const double sectionAccentWidth = 4;
+  static const double sectionAccentHeight = 24;
+  static const double sectionAccentRadius = 4;
+  static const double sectionAccentGap = 8;
+  static const double sectionActionMinWidth = 48;
+  static const double sectionActionHorizontalPadding = 8;
+  static const double softCardPadding = 16;
+  static const double statusPillHorizontalPadding = 10;
+  static const double statusPillVerticalPadding = 6;
+  static const double statusPillIconSize = 14;
+  static const double statusPillGap = 6;
+  static const double statusDotSize = 7;
+  static const double discountHorizontalPadding = 10;
+  static const double discountVerticalPadding = 5;
+  static const double tapScalePressed = 0.97;
+  static const double tapScaleDefault = 1;
+  static const double tapMovementTolerance = 12;
+  static const double chipPillHorizontalPadding = 16;
+  static const double chipPillVerticalPadding = 8;
+  static const double stateIconContainer = 80;
+  static const double stateIconSize = 36;
 }

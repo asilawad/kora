@@ -17,12 +17,14 @@ final class ServicesPageView extends StatelessWidget {
     required this.categories,
     required this.autofocusSearch,
     required this.currencySymbol,
+    this.showBack = true,
     super.key,
   });
 
   final List<CategoryEntity> categories;
   final bool autofocusSearch;
   final String currencySymbol;
+  final bool showBack;
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -51,10 +53,13 @@ final class ServicesPageView extends StatelessWidget {
                   sliver: SliverToBoxAdapter(
                     child: Row(
                       children: [
-                        IconButton(
-                          onPressed: () => Navigator.of(context).maybePop(),
-                          icon: const Icon(Icons.arrow_back),
-                        ),
+                        if (showBack)
+                          IconButton(
+                            onPressed: () => Navigator.of(context).maybePop(),
+                            icon: const Icon(Icons.arrow_back),
+                          )
+                        else
+                          const SizedBox(width: ServicesDimensions.itemSpacing),
                         Expanded(
                           child: Text(
                             AppLocalizations.of(context)!.servicesTitle,

@@ -8,7 +8,9 @@ import '../../features/services/presentation/pages/services_page_arguments.dart'
 import '../../features/service_details/presentation/pages/service_details_page.dart';
 import '../../features/booking/domain/entities/booking_entity.dart';
 import '../../features/booking/presentation/pages/booking_success_page.dart';
+import '../../features/account/presentation/pages/account_page.dart';
 import '../../features/my_bookings/presentation/pages/my_bookings_page.dart';
+import '../../features/services/presentation/pages/services_tab_page.dart';
 import '../../features/home/domain/entities/service_entity.dart';
 import 'app_routes.dart';
 
@@ -36,9 +38,27 @@ abstract final class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
+                path: AppRoutes.servicesTabPath,
+                name: AppRoutes.servicesTabName,
+                builder: (context, state) => const ServicesTabPage(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
                 path: AppRoutes.myBookingsPath,
                 name: AppRoutes.myBookingsName,
                 builder: (context, state) => const MyBookingsPage(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
+                path: AppRoutes.accountPath,
+                name: AppRoutes.accountName,
+                builder: (context, state) => const AccountPage(),
               ),
             ],
           ),

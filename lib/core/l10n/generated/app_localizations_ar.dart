@@ -130,6 +130,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get homeCategories => 'الفئات';
 
   @override
+  String get homeOffers => 'عروض مميزة';
+
+  @override
+  String get homeBrowseAll => 'تصفح جميع الخدمات';
+
+  @override
   String get homeSearchHint => 'ابحث عن الملاعب والخدمات';
 
   @override
@@ -373,4 +379,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get myBookingsStatusConfirmed => 'مؤكد';
+
+  @override
+  String get bookingCodeCopied => 'تم نسخ الرمز';
+
+  @override
+  String get bookingCopyCode => 'نسخ الرمز';
+
+  @override
+  String get navigationServices => 'الخدمات';
+
+  @override
+  String get navigationAccount => 'حسابي';
+
+  @override
+  String get accountTitle => 'حسابي';
+
+  @override
+  String get accountGuestTitle => 'أهلاً بك في كورة';
+
+  @override
+  String get accountGuestSubtitle => 'سجّل دخولك لإدارة حجوزاتك وحسابك.';
+
+  @override
+  String get accountContact => 'تواصل معنا';
+
+  @override
+  String get accountCopied => 'تم النسخ';
 }
